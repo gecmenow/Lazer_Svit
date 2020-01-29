@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Отзывы";
+}
+
+<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteFeedback", "AdminFeedbacks")?id=" + id;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+
+@model PagedList.IPagedList<Lazer_Svit.Models.Database.DbFeedback>
+@using PagedList.Mvc;
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+<div id="result">
+    <main class="main">
+        <section class="admin-reviews">
+            <div class="wrapper">
+                <div class="reviews">
+                    @foreach (var data in Model)
+                    {
+                        <blockquote>
+                            <header>
+                                <span data-rating="@data.UserRating">
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                </span>
+                                <span><em>@data.UserName</em></span>
+                                <span>@data.ReviewPostDate</span>
+                            </header>
+                            <p>@data.UserReview</p>
+                            <button type="button" class="btn btn-danger RemoveLink" data-id="@data.Id">Удалить</button>
+                        </blockquote>
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+@*
+    <div id="result">
+        <table>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Rating</th>
+                <th>User Review</th>
+                <th>Review PostDate</th>
+                <th></th>
+            </tr>
+            @foreach (var data in Model)
+            {
+                <tr>
+                    <td><a href="/admin/feedbacks/edit/@data.Id">Edit</a></td>
+                    <td>@data.Id</td>
+                    <td>@data.UserName</td>
+                    <td>@data.UserEmail</td>
+                    <td>@data.UserRating</td>
+                    <td>@data.UserReview</td>
+                    <td>@data.ReviewPostDate</td>
+                    <td><a href="#" class="RemoveLink" data-id="@data.Id">Delete</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+*@
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+

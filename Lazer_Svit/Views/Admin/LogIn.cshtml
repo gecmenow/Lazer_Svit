@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+}
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+
+<form class="form-login" action="/admin/LogIn" method="post">
+    <h1 class="login__title">Вход в Админ-панель</h1>
+    <input type="text" class="login__input" placeholder="Логин" name="name" autofocus required>
+    <input type="password" class="login__input" placeholder="Пароль" name="password" required>
+    <input type="submit" value="Войти" class="login__button">
+</form>

@@ -1,0 +1,91 @@
+﻿@model Lazer_Svit.Models.Price
+
+@{ 
+    ViewBag.Title = Resources.Resource.menu_lazer_price;
+}
+
+<main class="main">
+    <section class="price">
+        <div class="wrapper">
+            <div class="price-content">
+                <h2 class="price__title">@Resources.Resource.price_header</h2>
+                <p class="price__desc"><i>@Resources.Resource.price_info</i></p>
+                <h3 class="price__subtitle">@Resources.Resource.price_table_1</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Resource.price_table_col_1</th>
+                            <th>@Resources.Resource.price_table_col_2</th>
+                            <th>@Resources.Resource.price_table_col_3</th>
+                            <th>@Resources.Resource.price_table_col_4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.woods)
+                        {
+                        <tr>
+                            <td>@data.MaterialThickness</td>
+                            <td>@data.lowCost</td>
+                            <td>@data.midCost</td>
+                            <td>@data.highCost</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <h3 class="price__subtitle">@Resources.Resource.price_table_2</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Resource.price_table_col_1</th>
+                            <th>@Resources.Resource.price_table_col_2</th>
+                            <th>@Resources.Resource.price_table_col_3</th>
+                            <th>@Resources.Resource.price_table_col_4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.acrylics)
+                        {
+                            <tr>
+                                <td>@data.MaterialThickness</td>
+                                <td>@data.lowCost</td>
+                                <td>@data.midCost</td>
+                                <td>@data.highCost</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <h3 class="price__subtitle">@Resources.Resource.price_table_3</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>@Resources.Resource.price_table_3_col1</th>
+                            <th>@Resources.Resource.price_table_3_col2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Resources.Resource.table_3_row_1</td>
+                            <td>@Model.engraving[0].Price</td>
+                        </tr>
+                        <tr>
+                            <td>@Resources.Resource.table_3_row_2</td>
+                            <td>@Model.engraving[1].Price</td>
+                        </tr>
+                        <tr>
+                            <td>@Resources.Resource.table_3_row_3</td>
+                            <td>@Model.engraving[2].Price</td>
+                        </tr>
+                        <tr>
+                            <td>@Resources.Resource.table_3_row_4</td>
+                            <td>@Model.engraving[3].Price</td>
+                        </tr>
+                        <tr>
+                            <td>@Resources.Resource.table_3_row_5</td>
+                            <td>@Model.engraving[4].Price</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>

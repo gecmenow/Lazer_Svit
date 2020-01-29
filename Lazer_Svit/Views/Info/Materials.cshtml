@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = @Resources.Resource.menu_lazer_materials; 
+}
+
+<main class="main">
+    <section class="materials">
+        <div class="wrapper">
+            <div class="materials-content">
+                <h3 class="materials__title">@Resources.Resource.materials_header</h3>
+                <h3 class="materials__subtitle">@Resources.Resource.materials_acryl_header</h3>
+                <div class="materials__item">
+                    <div class="materials__info"><p>@Resources.Resource.materials_acryl_text</p></div>
+                    <div class="materials__icon"><img src="~/Content/images/material1.png"></div>
+                </div>
+                <h3 class="materials__subtitle">@Resources.Resource.materials_plywood_header</h3>
+                <div class="materials__item">
+                    <div class="materials__icon"><img src="~/Content/images/material2.png"></div>
+                    <p class="materials__info">
+                        @Resources.Resource.materials_plywood_text
+                    </p>
+                </div>
+                <h3 class="materials__subtitle">@Resources.Resource.materilas_other_header</h3>
+                <div class="materials__item">
+                    <p class="materials__info">
+                        @Resources.Resource.materials_other_text
+                    </p>
+                    <div class="materials__icon"><img src="~/Content/images/material3.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,48 @@
+﻿<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteItem", "AdminItems")?id=" + id;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+@model IEnumerable<Lazer_Svit.Models.Database.DbItems>
+
+<!--result ДЛЯ ВЫВОДА-->
+<div id="result">
+    <main class="main">
+        <section class="admin-product">
+            <div class="admin-product-wrapper">
+                <a href="/admin/item/add/" class="btn btn-primary add-new-product">Добавить новый товар</a>
+                <table class="product__table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Категория</th>
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th>Описание</th>
+                            <th>Опции</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model)
+                        {
+                            <tr>
+                                <td>@data.Id</td>
+                                <td>@data.CategoryRU</td>
+                                <td>@data.NameRU</td>
+                                <td>@data.Price</td>
+                                <td>@data.DescriptionRU</td>
+                                <td><a href="/admin/items/edit/@data.Id" class="btn btn-warning"><i class="fas fa-edit"></i></a><button class="btn btn-danger RemoveLink" data-id="@data.Id"><i class="fas fa-trash-alt"></i></button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+

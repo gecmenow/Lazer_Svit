@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Добавление товара";
+}
+
+@model Lazer_Svit.Models.Database.DbItems
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+
+<main class="main">
+    <section class="admin-product">
+        <div class="wrapper">
+            <div class="edit-form-header">
+                Добавление товара
+            </div>
+            @using (Html.BeginForm("AddItem", "AdminItems", FormMethod.Post, new { @class = "product-edit", enctype = "multipart/form-data" }))
+            {
+                <div class="product-edit__wrapper">
+                    <label class="edit__title">Категория</label><br>
+                    <label>рус</label>@Html.EditorFor(m => m.CategoryRU, new { @class = "input-product-edit" })<br>
+                    <label>укр</label>@Html.EditorFor(m => m.CategoryUA, new { @class = "input-product-edit" })<br>
+                    <label>англ</label>@Html.EditorFor(m => m.CategoryEN, new { @class = "input-product-edit" })<br>
+                </div>
+                <div class="product-edit__wrapper">
+                    <label class="edit__title">Название</label><br>
+                    <label>рус</label>@Html.EditorFor(m => m.NameRU, new { @class = "input-product-edit" })<br>
+                    <label>укр</label>@Html.EditorFor(m => m.NameUA, new { @class = "input-product-edit" })<br>
+                    <label>англ</label>@Html.EditorFor(m => m.NameEN, new { @class = "input-product-edit" })<br>
+                </div>
+                <div class="product-edit__wrapper">
+                    <label class="edit__title">Цена</label><br>
+                    <label></label>@Html.EditorFor(m => m.Price, new { @class = "input-product-edit" })
+                </div>
+                <div class="product-edit__wrapper">
+                    <label class="edit__title">Описание</label><br>
+                    <label>рус</label>@Html.EditorFor(m => m.DescriptionRU, new { @class = "input-product-edit" })<br>
+                    <label>укр</label>@Html.EditorFor(m => m.DescriptionUA, new { @class = "input-product-edit" })<br>
+                    <label>англ</label>@Html.EditorFor(m => m.DescriptionEN, new { @class = "input-product-edit" })<br>
+                </div>
+                <div class="product-edit__wrapper">
+                    <label class="edit__title">Изображение</label><br>
+                    <div class="edit-img__list">
+                        <div class="edit-img__items">
+                            <label for="custom-file-upload1" class="file-upload">
+                                <span class="file-upload__name js-value">Загрузить фаил</span>
+                                <input type="file" name="uploads" value="1" id="custom-file-upload1" />
+                                <i class="fas fa-file-upload file-upload__icon"></i>
+                            </label>
+                        </div>
+                        <div class="edit-img__items">
+                            <label for="custom-file-upload2" class="file-upload">
+                                <span class="file-upload__name js-value">Загрузить фаил</span>
+                                <input type="file" name="uploads" value="1" id="custom-file-upload2" />
+                                <i class="fas fa-file-upload file-upload__icon"></i>
+                            </label>
+                        </div>
+                        <div class="edit-img__items">
+                            <label for="custom-file-upload3" class="file-upload">
+                                <span class="file-upload__name js-value">Загрузить фаил</span>
+                                <input type="file" name="uploads" value="1" id="custom-file-upload3" />
+                                <i class="fas fa-file-upload file-upload__icon"></i>
+                            </label>
+                        </div>
+                        <div class="edit-img__items">
+                            <label for="custom-file-upload4" class="file-upload">
+                                <span class="file-upload__name js-value">Загрузить фаил</span>
+                                <input type="file" name="uploads" value="1" id="custom-file-upload4" />
+                                <i class="fas fa-file-upload file-upload__icon"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            }
+        </div>
+    </section>
+</main>

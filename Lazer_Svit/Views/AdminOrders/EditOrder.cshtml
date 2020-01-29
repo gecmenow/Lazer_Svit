@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Редактировать заказ";
+}
+
+@model Lazer_Svit.Models.AdminOrder
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+<main class="main">
+    <section class="admin-order-edit">
+        <div class="wrapper">
+            <div class="edit-form-header">
+                Редактирование заказа
+            </div>
+            @using (Html.BeginForm("Editorder", "AdminOrders", FormMethod.Post, new { @class = "order-edit" }))
+            {
+                @Html.HiddenFor(m => m.Id)
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Статус заказа</label><br>
+                    <select class="order-status">
+                        <option class="order-status__item" name="order_Status" value="В обработке">В обработке</option>
+                        <option class="order-status__item" name="order_Status" value="Выполняется">Выполняется</option>
+                        <option class="order-status__item" name="order_Status" value="Выполнен">Выполнен</option>
+                    </select><br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Статус оплаты</label><br>
+                    <select class="payment-status">
+                        <option class="payment-status__item" name="pay_status" value="Не оплачено">Не оплачено</option>
+                        <option class="payment-status__item" name="pay_status" value="Оплачено">Оплачено</option>
+                    </select><br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Способ оплаты</label><br>
+                    <select class="payment-method">
+                        <option class="payment-method__item" name="payment" value="Наличными">Оплата наличными</option>
+                        <option class="payment-method__item" name="payment" value="На карту ПриватБанка">На карту Приват банка</option>
+                        <option class="payment-method__item" name="payment" value="Visa/MaterCard">Оплата через Visa/Mastercard</option>
+                    </select><br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Срособ доставки</label><br>
+                    <select class="delivery-status">
+                        <option class="delivery-method__item">@Model.Delivery</option>
+                        @if (Model.Delivery != "Самовывоз")
+                        {
+                            <option class="delivery-method__item" name="delivery" value="Самовывоз">Самовывоз</option>
+                        }
+                        @if (Model.Delivery != "Новая Почта")
+                        {
+                            <option class="delivery-method__item" name="delivery" value="Новая Почта">Новая Почта</option>
+                        }
+                        @if (Model.Delivery != "Курьером Новой Почты")
+                        {
+                            <option class="delivery-method__item" name="delivery" value="Курьером Новой Почты">Курьером Новой Почты</option>
+                        }
+                    </select><br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Информация для доставки</label><br>
+                    <label>Имя и фамилия</label>@Html.EditorFor(m => m.Name, new { @class = "input-order-edit" })<br>
+                    <label>Мобильный телефон</label>@Html.EditorFor(m => m.Tel, new { @class = "input-order-edit" })<br>
+                    <label>Эл. почта</label>@Html.EditorFor(m => m.Email, new { @class = "input-order-edit" })<br>
+                    <label>Область</label>@Html.EditorFor(m => m.Region, new { @class = "input-order-edit" })<br>
+                    <label>Город</label>@Html.EditorFor(m => m.City, new { @class = "input-order-edit" })<br>
+                    <label>Адрес или Номер склад Новой Почты</label>@Html.EditorFor(m => m.AdressInfo, new { @class = "input-order-edit" })<br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <label class="edit__title">Заказ</label><br>
+                    <label>Товар</label>@Html.EditorFor(m => m.Items, new { @class = "input-order-edit" })<br>
+                    <label>Цена</label>@Html.EditorFor(m => m.TotalCost, new { @class = "input-order-edit" })<br>
+                </div>
+                <div class="order-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            }
+        </div>
+    </section>
+</main>

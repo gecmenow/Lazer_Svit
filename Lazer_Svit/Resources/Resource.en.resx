@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="contact_about" xml:space="preserve">
+    <value>About company</value>
+  </data>
+  <data name="contact_adress" xml:space="preserve">
+    <value>Kiev</value>
+  </data>
+  <data name="inst_button_text" xml:space="preserve">
+    <value>Show more</value>
+  </data>
+  <data name="main_descr_header" xml:space="preserve">
+    <value>WIDE RANGE OF MATERIALS</value>
+  </data>
+  <data name="main_desct_text_1" xml:space="preserve">
+    <value>is not a new technology, but it has acquired new opportunities together with our design studio “LS” in Kiev. Laser cutting allows you to cut or cut any material with a high-power laser beam. Computer control, neat cuts with a low heat-affected zone make it possible to perform work of any complexity with the accuracy of a surgeon. The magic beam gives in to very different material, both soft and super hard.</value>
+  </data>
+  <data name="main_examples_header" xml:space="preserve">
+    <value>WORK EXAMPLES</value>
+  </data>
+  <data name="main_Example_1" xml:space="preserve">
+    <value>Acrylic</value>
+  </data>
+  <data name="main_Example_2" xml:space="preserve">
+    <value>Plastic</value>
+  </data>
+  <data name="main_Example_3" xml:space="preserve">
+    <value>Cardboard</value>
+  </data>
+  <data name="main_Example_4" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="main_Example_5" xml:space="preserve">
+    <value>Plywood</value>
+  </data>
+  <data name="main_Example_6" xml:space="preserve">
+    <value>Leather and fabrics</value>
+  </data>
+  <data name="main_reason_first_text" xml:space="preserve">
+    <value>Our equipment is made by a Ukrainian young but successful company. With the use of the latest technology and high quality components</value>
+  </data>
+  <data name="main_reason_fourth_text" xml:space="preserve">
+    <value>Help in the implementation of ideas in the layout. We will make every effort to match the final product to your idea.</value>
+  </data>
+  <data name="main_reason_second_text" xml:space="preserve">
+    <value>The speed of the task from 1 hour to 7 days of large orders</value>
+  </data>
+  <data name="main_reason_third_text" xml:space="preserve">
+    <value>The quality of the equipment allows cutting at an average speed of about 25 mm / sec.</value>
+  </data>
+  <data name="main_reason_header" xml:space="preserve">
+    <value>REASONS TO CHOOSE US</value>
+  </data>
+  <data name="contact_adress_street" xml:space="preserve">
+    <value>Lesia Kurbas Avenue, 2B</value>
+  </data>
+  <data name="contact_time_1" xml:space="preserve">
+    <value>Work time</value>
+  </data>
+  <data name="contact_time_2" xml:space="preserve">
+    <value>Mon- Fr: 10:00 - 19:00</value>
+  </data>
+  <data name="footer_copyright" xml:space="preserve">
+    <value>Laser cutting and engraving</value>
+  </data>
+  <data name="header_phones" xml:space="preserve">
+    <value>Our phones</value>
+  </data>
+  <data name="main_desct_text_2" xml:space="preserve">
+    <value> is a high-precision transfer of your idea to wood, leather, cardboard, etc. Beauty has no boundaries, as well as the hand of man, able to translate into reality any designer's intention.</value>
+  </data>
+  <data name="main_desct_text_gravir" xml:space="preserve">
+    <value>Laser engraving</value>
+  </data>
+  <data name="main_desct_text_lazer" xml:space="preserve">
+    <value>Laser cutting</value>
+  </data>
+  <data name="main_reason_first_header" xml:space="preserve">
+    <value>QUALITY UKRAINIAN EQUIPMENT</value>
+  </data>
+  <data name="main_reason_fourth_header" xml:space="preserve">
+    <value>HELP WITH THE MOCKET</value>
+  </data>
+  <data name="main_reason_second_header" xml:space="preserve">
+    <value>TERM OF EXECUTION OF THE ORDER</value>
+  </data>
+  <data name="main_reason_third_header" xml:space="preserve">
+    <value>CUTTING SPEED</value>
+  </data>
+  <data name="main_title_b" xml:space="preserve">
+    <value>Lazer Svit</value>
+  </data>
+  <data name="main_title_h1" xml:space="preserve">
+    <value>We are design studio</value>
+  </data>
+  <data name="main_title_h2" xml:space="preserve">
+    <value>We provide services for cutting and engraving materials</value>
+  </data>
+  <data name="menu_contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="menu_lazer" xml:space="preserve">
+    <value>Laser cutting</value>
+  </data>
+  <data name="menu_lazer_info" xml:space="preserve">
+    <value>Order info</value>
+  </data>
+  <data name="menu_lazer_materials" xml:space="preserve">
+    <value>Materails</value>
+  </data>
+  <data name="menu_lazer_price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="menu_main" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="menu_products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="menu_reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="materials_acryl_header" xml:space="preserve">
+    <value>Acrylic (organic glass)</value>
+  </data>
+  <data name="materials_acryl_text" xml:space="preserve">
+    <value>Acrylic is ideal for laser cutting, it is equipped with a protective film on both sides so that its surfaces are clean and free from scratches. The laser cutting edge is also absolutely clean, with a laser engraving a smooth matte surface is created.</value>
+  </data>
+  <data name="materials_header" xml:space="preserve">
+    <value>We have a wide range of materials that are ideal for laser engraving cutting.</value>
+  </data>
+  <data name="materials_other_text" xml:space="preserve">
+    <value>Our equipment can process various materials, if we don’t have such material, you can send the material to us or bring it with you to the studio. Some materials, we can order specially for you. If there are any materials that you would like to cut or engrave with a laser or a router, please feel free to contact us by e-mail and ask if we can cut or engrave the material.</value>
+  </data>
+  <data name="materials_plywood_header" xml:space="preserve">
+    <value>Plywood</value>
+  </data>
+  <data name="materials_plywood_text" xml:space="preserve">
+    <value>Plywood is a great alternative to wood. Plywood can be opened or painted, it is elastic. We use the highest quality forests that are perfectly cut by our laser. All surfaces have first-class quality, the edge of laser cutting is darker than the material, but pleasant. With the help of laser cutting plywood you can achieve good and accurate results. Permanent plus of plywood in comparison with wood is strength, lightness and, of course, price.</value>
+  </data>
+  <data name="materilas_other_header" xml:space="preserve">
+    <value>Other materials</value>
+  </data>
+  <data name="order_info_header" xml:space="preserve">
+    <value>Ordering Information</value>
+  </data>
+  <data name="order_info_info" xml:space="preserve">
+    <value>The designer’s paid service cost is based on the complexity of the work and starts from 50 UAH.</value>
+  </data>
+  <data name="order_info_subheader" xml:space="preserve">
+    <value>If you decide on your own, or with the help of a designer to prepare a layout, then pay attention to such points:</value>
+  </data>
+  <data name="order_info_text1" xml:space="preserve">
+    <value>We work in the vector program</value>
+  </data>
+  <data name="order_info_text10" xml:space="preserve">
+    <value>layouts and double (and more) contours are not allowed in the layout for cutting and engraving</value>
+  </data>
+  <data name="order_info_text2" xml:space="preserve">
+    <value>For a correct and quick calculation of the cost, as well as for the production of the order, you must provide a layout in the vector. The most popular vector graphic file formats are:</value>
+  </data>
+  <data name="order_info_text3" xml:space="preserve">
+    <value>We can also accept the layout in such formats as:</value>
+  </data>
+  <data name="order_info_text4" xml:space="preserve">
+    <value>If you have not prepared it, we can do it for you.</value>
+  </data>
+  <data name="order_info_text5" xml:space="preserve">
+    <value>Keep in mind that self-preparation of a file for laser cutting or engraving can significantly speed up the execution time of your order</value>
+  </data>
+  <data name="order_info_text6" xml:space="preserve">
+    <value>all drawings must be made in 1: 1 scale</value>
+  </data>
+  <data name="order_info_text7" xml:space="preserve">
+    <value>all elements intended for cutting must be in curves</value>
+  </data>
+  <data name="order_info_text8" xml:space="preserve">
+    <value>the drawing of the product must be made in thin lines</value>
+  </data>
+  <data name="order_info_text9" xml:space="preserve">
+    <value>the vector image in the file for cutting should not contain open points in closed contours, fills, superimposed contours on each other, double lines and intersections</value>
+  </data>
+  <data name="price_header" xml:space="preserve">
+    <value>Prices for cutting various materials</value>
+  </data>
+  <data name="price_info" xml:space="preserve">
+    <value>Pay attention, the cost of laser cutting is calculated per meter of linear cutting of the material. The cost of laser engraving is calculated per cm².</value>
+  </data>
+  <data name="price_table_1" xml:space="preserve">
+    <value>LASER CUTTING: Plywood, MDF, Fiberboard, OSB, CARDBOARD</value>
+  </data>
+  <data name="price_table_2" xml:space="preserve">
+    <value>LASER ACRYLIC CUTTING</value>
+  </data>
+  <data name="price_table_3" xml:space="preserve">
+    <value>LASER ENGRAVING</value>
+  </data>
+  <data name="price_table_3_col1" xml:space="preserve">
+    <value>Material type</value>
+  </data>
+  <data name="price_table_3_col2" xml:space="preserve">
+    <value>Price, UAH / cm²</value>
+  </data>
+  <data name="price_table_col_1" xml:space="preserve">
+    <value>The thickness of the material, mm.</value>
+  </data>
+  <data name="price_table_col_2" xml:space="preserve">
+    <value>Cost, UAH for mp (up to 100 m.)</value>
+  </data>
+  <data name="price_table_col_3" xml:space="preserve">
+    <value>Cost, UAH for mp (up to 1000 m.)</value>
+  </data>
+  <data name="price_table_col_4" xml:space="preserve">
+    <value>Cost, UAH for mp (over 1000 m.)</value>
+  </data>
+  <data name="add_to_cart" xml:space="preserve">
+    <value>Add to cart</value>
+  </data>
+  <data name="cart_amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="cart_checkout" xml:space="preserve">
+    <value>CHECKOUT</value>
+  </data>
+  <data name="cart_empty" xml:space="preserve">
+    <value>The cart is empty</value>
+  </data>
+  <data name="cart_name" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="cart_price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="cart_total_item_price" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="cart_total_price" xml:space="preserve">
+    <value>Total cost</value>
+  </data>
+  <data name="contact_button" xml:space="preserve">
+    <value>Send a message</value>
+  </data>
+  <data name="contact_sub_header" xml:space="preserve">
+    <value>Please fill out the form below and our team L.S. will contact you soon</value>
+  </data>
+  <data name="contact_sub_info" xml:space="preserve">
+    <value>To do this, please add a clear description of your project, including the required materials and dimensions. We may ask you to provide additional information for the qualitative and quick implementation of your idea. Do not forget to specify the quantity, type or color that you want.</value>
+  </data>
+  <data name="contact_upload" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="form_mail" xml:space="preserve">
+    <value>Your mail</value>
+  </data>
+  <data name="form_name" xml:space="preserve">
+    <value>Your first and last name</value>
+  </data>
+  <data name="form_phone" xml:space="preserve">
+    <value>Your phone number</value>
+  </data>
+  <data name="form_score" xml:space="preserve">
+    <value>Score:</value>
+  </data>
+  <data name="form_text" xml:space="preserve">
+    <value>Message text</value>
+  </data>
+  <data name="items_similar" xml:space="preserve">
+    <value>Similar products</value>
+  </data>
+  <data name="item_category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="item_descr" xml:space="preserve">
+    <value>Desciption</value>
+  </data>
+  <data name="item_reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="menu_cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="money" xml:space="preserve">
+    <value>eur</value>
+  </data>
+  <data name="reviews_button" xml:space="preserve">
+    <value>Leave feedback</value>
+  </data>
+  <data name="reviews_header" xml:space="preserve">
+    <value>Leave your feedback</value>
+  </data>
+  <data name="sort_header" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="sort_high" xml:space="preserve">
+    <value>High to low</value>
+  </data>
+  <data name="sort_low" xml:space="preserve">
+    <value>Low to High</value>
+  </data>
+  <data name="sort_new" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="sort_pop" xml:space="preserve">
+    <value>Popular</value>
+  </data>
+  <data name="checkout_adress_adress" xml:space="preserve">
+    <value>Address or Warehouse Number of New Mail</value>
+  </data>
+  <data name="checkout_adress_city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="checkout_adress_header" xml:space="preserve">
+    <value>Delivery address</value>
+  </data>
+  <data name="checkout_adress_no_deliv" xml:space="preserve">
+    <value>Delivery is not required</value>
+  </data>
+  <data name="checkout_adress_region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="checkout_confirm" xml:space="preserve">
+    <value>The order is confirmed</value>
+  </data>
+  <data name="checkout_cont_header" xml:space="preserve">
+    <value>Contact details</value>
+  </data>
+  <data name="checkout_cont_mail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="checkout_cont_name" xml:space="preserve">
+    <value>Name and Surname</value>
+  </data>
+  <data name="checkout_cont_phone" xml:space="preserve">
+    <value>Mobile phone</value>
+  </data>
+  <data name="checkout_deliv" xml:space="preserve">
+    <value>Delivery method</value>
+  </data>
+  <data name="checkout_deliv_myself" xml:space="preserve">
+    <value>Pickup</value>
+  </data>
+  <data name="checkout_deliv_post" xml:space="preserve">
+    <value>Nova Poshta</value>
+  </data>
+  <data name="checkout_deliv_post_cour" xml:space="preserve">
+    <value>Courier Nova Poshta</value>
+  </data>
+  <data name="checkout_edit_order" xml:space="preserve">
+    <value>Edit order</value>
+  </data>
+  <data name="checkout_header" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="checkout_pay_cash" xml:space="preserve">
+    <value>Pay in cash</value>
+  </data>
+  <data name="checkout_pay_header" xml:space="preserve">
+    <value>Selection of shipping and payment methods</value>
+  </data>
+  <data name="checkout_pay_pb_card" xml:space="preserve">
+    <value>On card Privat Bank</value>
+  </data>
+  <data name="checkout_pay_visa_card" xml:space="preserve">
+    <value>Pay via Visa / Mastercard</value>
+  </data>
+  <data name="checkout_pay_way" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="checkout_total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="checkout_total_to_pay" xml:space="preserve">
+    <value>To pay</value>
+  </data>
+  <data name="order_thanks" xml:space="preserve">
+    <value>Thanks!</value>
+  </data>
+  <data name="order_thanks_text" xml:space="preserve">
+    <value>Your order is successfully completed. We will contact you shortly.</value>
+  </data>
+  <data name="checkout_deliv_adress" xml:space="preserve">
+    <value>Kyiv, Lesia Kurbas Avenue 2B (Budivlya Plant "NVP Saturn")</value>
+  </data>
+  <data name="table_3_row_1" xml:space="preserve">
+    <value>Acrylic / Plastic</value>
+  </data>
+  <data name="table_3_row_2" xml:space="preserve">
+    <value>Plywood / Wood</value>
+  </data>
+  <data name="table_3_row_3" xml:space="preserve">
+    <value>Rrock</value>
+  </data>
+  <data name="table_3_row_4" xml:space="preserve">
+    <value>Leather</value>
+  </data>
+  <data name="table_3_row_5" xml:space="preserve">
+    <value>Cloth</value>
+  </data>
+  <data name="add_to_cart_click" xml:space="preserve">
+    <value>One click buy</value>
+  </data>
+  <data name="menu_uv_header" xml:space="preserve">
+    <value>UV Printing</value>
+  </data>
+  <data name="uv_price" xml:space="preserve">
+    <value>UV printing prices</value>
+  </data>
+  <data name="uv_subtitle" xml:space="preserve">
+    <value>Cost and type of materials for UV printing</value>
+  </data>
+</root>

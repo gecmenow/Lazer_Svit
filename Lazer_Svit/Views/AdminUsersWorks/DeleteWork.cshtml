@@ -1,0 +1,63 @@
+﻿
+<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteWork", "AdminUsersWorks")?id=" + id;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+@model IEnumerable<Lazer_Svit.Models.Database.DBUserWork>
+
+<div id="result">
+    <main class="main">
+        <section class="admin-order">
+            <div class="admin-order-wrapper">
+                <table class="individual-order-table">
+                    <thead>
+                        <tr>
+                            <th>Опции</th>
+                            <th>ID</th>
+                            <th>Дата заказа</th>
+                            <th>ФИО</th>
+                            <th>E-mail</th>
+                            <th>Номер телефона</th>
+                            <th>Текст сообщения</th>
+                            <th>Файл</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model)
+                        {
+
+                            <tr>
+                                <th>
+                                    <button type="button" class="btn btn-danger RemoveLink" data-title="Удалить заказ" data-id="@data.Id"><i class="fas fa-trash-alt"></i></button>
+                                </th>
+                                <th>@data.Id</th>
+                                <th>@data.FileTime</th>
+                                <th>@data.UserName</th>
+                                <th>@data.UserEmail</th>
+                                <th>@data.UserPhone</th>
+                                <th>@data.Text</th>
+                                <th>
+                                    @if (data.File == "Файл не найден")
+                                    {
+                                        <span>@data.File</span>
+
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink(data.File, "Download", "AdminUsersWorks", new { data.Id }, null)
+                                    }
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>

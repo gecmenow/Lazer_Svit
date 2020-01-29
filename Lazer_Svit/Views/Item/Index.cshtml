@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = Resources.Resource.menu_products;
+}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.add-to-cart').click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("AddToCart", "Cart")?id=" + id;
+            console.log(url);
+            $('.decoy').load(url);
+        });
+        
+        @*$('.fast-buy__button').click(function () {
+            var id = $(this).attr("data-id");
+            var tel = $('.form-input__tel').val();
+            url = "@Url.Action("OneClickBuy", "Checkout")?id=" + id + "&tel=" + tel;
+            console.log(url);
+            $('.decoy').load(url);
+        });*@
+    })
+</script>
+
+@model PagedList.IPagedList<Lazer_Svit.Models.Database.DbProductReview>
+@using PagedList.Mvc;
+
+<main class="main">
+    <section class="product-card">
+        <div class="wrapper">
+            <div class="product-card-header">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                    <div class="fotorama" data-allowfullscreen="native" data-autoplay="true" data-stopautoplayontouch="true" data-arrows="true" data-click="true" data-swipe="true" data-loop="true" data-nav="thumbs">
+                        <img src="~/Content/images/products/@ViewBag.Item.Image">
+                        <img src="~/Content/images/products/@ViewBag.Item.Image2">
+                        <img src="~/Content/images/products/@ViewBag.Item.Image3">
+                        <img src="~/Content/images/products/@ViewBag.Item.Image4">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                    <a href="/item/@ViewBag.Item.Id" class="product-card__title">@ViewBag.Item.Name</a>
+                    <h4 class="product-card__category">@Resources.Resource.item_category: <span>@ViewBag.Item.Category</span></h4>
+                    <div class="add-to-cart__wraper">
+                        <p class="product-card__price">@ViewBag.Item.Price <span>@Resources.Resource.money</span></p>
+                        <button class="add-to-cart__fast"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart_click</button>
+                    </div>
+                    <div class="add-to-cart__wraper">
+                        <p class="product-count">
+                            <span class="item__plus"><i class="fas fa-plus"></i></span>
+                            <input type="text" name="quantity" class="input_value col-lg-4" data-id="1" value="1" min="1">
+                            <span class="item__minus"><i class="fas fa-minus"></i></span>
+                        </p>
+                        <button class="add-to-cart" data-id="@ViewBag.Item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart</button>
+                    </div>
+                    @*<div class="add-to-cart__wraper">
+                        <p class="product-card__price">@ViewBag.Item.Price <span>@Resources.Resource.money</span></p>
+                        <button class="add-to-cart" data-id="@ViewBag.Item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart</button>
+                        <button class="add-to-cart__fast"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart_click</button>
+                    </div>*@
+                    <h4 class="product-card__title-desc">@Resources.Resource.item_descr</h4>
+                    <p class="product-card__desc">
+                        @ViewBag.Item.Description
+                    </p>
+                </div>
+            </div>
+            <div class="product-card-bottom">
+                <h2 class="product-card__reviews-title">@Resources.Resource.item_reviews</h2>
+
+                <div class="reviews">
+                    @foreach (var data in Model)
+                    {
+                        <blockquote>
+                            <header>
+                                <span data-rating="@data.UserRating">
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                </span>
+                                <span><em>@data.UserName</em></span>
+                                <span>@data.ReviewPostDate.ToShortDateString()</span>
+                            </header>
+                            <p>@data.UserReview</p>
+                        </blockquote>
+                    }
+                </div>
+                <div class="pagination">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                </div>
+                <form class="contact-form reviews-form" method="post">
+                    <input hidden="hidden" name="id" value="@ViewBag.Item.Id">
+                    <input hidden="hidden" name="page" value="@Model.PageNumber">
+                    <div class="form-input-wrapper">
+                        <input class="form-input form-input__name" type="text" name="name" placeholder="@Resources.Resource.form_name">
+                        <div class="form-input__underlined"></div>
+                        <i class="form-input__icon fas fa-user"></i>
+                        <div class="error-message name__error-message">Введите имя и фамилию.</div>
+                    </div>
+                    <div class="form-input-wrapper">
+                        <input class="form-input form-input__email" type="email" name="email" placeholder="@Resources.Resource.form_mail">
+                        <div class="form-input__underlined"></div>
+                        <i class="form-input__icon fas fa-envelope-open"></i>
+                        <div class="error-message email__error-message">Введите корректный адрес электронной почты.</div>
+                    </div>
+                    <div class="form-input-wrapper">
+                        <fieldset class="rating">
+                            <p class="rating__caption">@Resources.Resource.form_score</p>
+                            <div class="rating__group">
+                                <input class="rating__star" type="radio" name="rate" value="1" aria-label="Ужасно" checked>
+                                <input class="rating__star" type="radio" name="rate" value="2" aria-label="Сносно">
+                                <input class="rating__star" type="radio" name="rate" value="3" aria-label="Нормально">
+                                <input class="rating__star" type="radio" name="rate" value="4" aria-label="Хорошо">
+                                <input class="rating__star" type="radio" name="rate" value="5" aria-label="Отлично">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-input-wrapper input-wrapper__height">
+                        <textarea class="form-textarea form-textarea__message" name="message" placeholder="@Resources.Resource.form_text"></textarea>
+                        <div class="form-input__underlined"></div>
+                        <i class="form-textarea__icon fas fa-comment"></i>
+                        <div class="error-message message__error-message">Оставьте Ваш отзыв</div>
+                    </div>
+                    <button class="form-button" type="submit">@Resources.Resource.reviews_button</button>
+                </form>
+                <div class="similar-product">
+                    <h2 class="similar-product__title">@Resources.Resource.items_similar</h2>
+                    <ul class="catalog__list">
+                        @foreach (var item in ViewBag.SameItems)
+                        {
+                            <li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                                <div class="catalog__item">
+                                    <a class="catalog__item-link" href="/item/@item.Id/">
+                                        <img class="catalog__item-img" src="~/Content/images/products/@item.Image">
+                                        <h3 class="catalog__item-title">@item.Name</h3>
+                                        <span class="catalog__item-price">@item.Price @Resources.Resource.money</span>
+                                    </a>
+                                    <button class="add-to-cart" data-id="@ViewBag.Item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart</button>
+                                    <button class="add-to-cart__fast" data-id="@ViewBag.Item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart_click</button>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="fast-buy-wraper">
+        <div class="fast-buy-content">
+            <h2 class="fast-buy__title">Быстрый заказ</h2>
+            <p class="fast-buy__text">Укажите ваш контактный номер, и мы перезвоним вам для уточнения деталей заказа</p>
+            <form class="fast-buy__form" action="/Checkout/OneClickBuy/" method="post">
+                <input type="hidden" name="id" value="@ViewBag.Item.Id">
+                <label>Мобильный телефон</label>
+                <div class="form-input-wrapper">
+                    <input class="form-input form-input__tel" type="tel" name="tel">
+                    <div class="form-input__underlined"></div>
+                    <i class="form-input__icon fas fa-phone"></i>
+                    <div class="error-message tel__error-message">Введите мобильный телефон</div>
+                </div>
+                <label class="form-input__desc"><i>Введите полный номер с региональным кодом. Например, 380935553535.<br>Или +79610000000 для неукраинских номеров</i></label>
+                <button type="submit" class="fast-buy__button">Оформить заказ</button>
+            </form>
+            <i class="fas fa-times fast-buy__close"></i>
+        </div>
+    </div>
+</main>
+<div class="decoy"></div>
+<script type="text/javascript" src="~/Content/script/form-check.js"></script>

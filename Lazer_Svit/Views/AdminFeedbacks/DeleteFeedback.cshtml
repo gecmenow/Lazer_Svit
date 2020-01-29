@@ -1,0 +1,38 @@
+﻿<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteFeedback", "AdminFeedbacks")?id=" + id;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+<div id="result">
+    <main class="main">
+        <section class="admin-reviews">
+            <div class="wrapper">
+                <div class="reviews">
+                    @foreach (var data in Model)
+                    {
+                        <blockquote>
+                            <header>
+                                <span data-rating="@data.UserRating">
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                </span>
+                                <span><em>@data.UserName</em></span>
+                                <span>@data.ReviewPostDate</span>
+                            </header>
+                            <p>@data.UserReview</p>
+                            <button type="button" class="btn btn-danger RemoveLink" data-id="@data.Id">Удалить</button>
+                        </blockquote>
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Товары";
+}
+
+<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteItem", "AdminItems")?id=" + id;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+@model PagedList.IPagedList<Lazer_Svit.Models.Database.DbItems>
+@using PagedList.Mvc;
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+
+<!--result ДЛЯ ВЫВОДА-->
+<div id="result">
+    <main class="main">
+        <section class="admin-product">
+            <div class="admin-product-wrapper">
+                <a  href="/admin/item/add/" class="btn btn-primary add-new-product">Добавить новый товар</a>
+                <table class="product__table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Категория</th>
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th>Описание</th>
+                            <th>Опции</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model)
+                        {
+                        <tr>
+                            <td>@data.Id</td>
+                            <td>@data.CategoryRU</td>
+                            <td>@data.NameRU</td>
+                            <td>@data.Price</td>
+                            <td>@data.DescriptionRU</td>
+                            <td><a href="/admin/items/edit/@data.Id" class="btn btn-warning"><i class="fas fa-edit"></i></a><button class="btn btn-danger RemoveLink" data-id="@data.Id"><i class="fas fa-trash-alt"></i></button></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

@@ -1,0 +1,183 @@
+﻿﻿<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     @Styles.Render("~/Content/css")
+     @*<link rel="stylesheet" type="text/css" href="~/Content/style.css">
+        <link rel="stylesheet" type="text/css" href="~/Content/fotorama.dev.css">*@
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <title>@ViewBag.Title</title>
+     <!-- SEO -->
+     <!-- <link rel="canonical" href="http://www.lazer-svit.com.ua/"> -->
+     <meta property="og:locale" content="ru_RU">
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="Lazer-Svit Лазерная резка и гравировка">
+     <meta property="og:description" content="Мы —&nbsp;Дизайнерская студия &nbsp;LS Являемся производственной компанией. Предоставляем услуги по порезке и гравировке материалов. Также производим свою линейку товаров. Мы работаем с молодыми дизайнерами и креативными агенствами, инженерами и архитекторами, агенствами рекламы и частными лицами. Мы всецело вникаем и помогаем в реализации Вашего проекта при помощи нашего оборудования. Все используемые нами материалы проходят тщательный отбор …">
+     <!-- <meta property="og:url" content="http://www.lazer-svit.com.ua/"> -->
+     <meta property="og:site_name" content="Lazer Svit">
+     <!-- <meta property="og:image" content="ссылка"> -->
+     <!-- /SEO -->
+     <link rel="apple-touch-icon" sizes="180x180" href="~/Content/images/icons/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="~/Content/images/icons/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="~/Content/images/icons/favicon-16x16.png">
+     <link rel="manifest" href="~/Content/images/icons/site.webmanifest">
+     <link rel="mask-icon" href="~/Content/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+     <meta name="msapplication-TileColor" content="#da532c">
+     <meta name="theme-color" content="#ffffff">
+ </head>
+ <body>
+     @if (IsSectionDefined("HeaderMain"))
+     {
+         @RenderSection("HeaderMain")
+     }
+     else if (IsSectionDefined("AdminHeader"))
+     {
+         @RenderSection("AdminHeader")
+     }
+     else
+     {
+         <header class="header">
+             <div class="header-top">
+                 <div class="wrapper">
+                     <div class="header-top-container">
+                         <div class="header-contact__info">
+                             <a href="https://www.instagram.com/lazersvit/"><i class="fab fa-instagram"></i></a>
+                             <a href="mailto:infolazersvit@gmail.com"><i class="fas fa-envelope"></i> infolazersvit@gmail.com</a>
+                             <button class="header-popup__toggle"><i class="fas fa-phone"></i> +38 (093) 917-44-89 </button>
+                             <div class="header-popup">
+                                 <p>@Resources.Resource.header_phones</p>
+                                 <div class="header-popup-container">
+                                     <div class="header-popup__phone">
+                                         <a href="tel:+380939174489"> +38 (093) 917-44-89 </a>
+                                         <a href="tel:+380971945130"> +38 (097) 194-51-30 </a>
+                                     </div>
+                                     <div class="header-popup__info">
+                                         <p>
+                                             @Resources.Resource.contact_time_1<br>
+                                             @Resources.Resource.contact_time_2
+                                         </p>
+                                     </div>
+
+                                 </div>
+
+                             </div>
+                         </div>
+                         <div class="lang-container">
+                             <a href="/language/ru/"><button class="lang-switcher">RU</button></a>
+                             <a href="/language/uk/"><button class="lang-switcher">UA</button></a>
+                             <a href="/language/en/"><button class="lang-switcher">ENG</button></a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="wrapper">
+                 <div class="header-middle">
+                     <button class="menu-toggle">
+                         <span></span>
+                     </button>
+                     <a class="header__logo" href="/">
+                         <img src="~/Content/images/logo.svg" alt="Lazer-Svit Лазерная резка и гравировка" title="Дизайнерская студия  LS">
+                     </a>
+                     <nav class="nav">
+                         <ul class="nav__list">
+                             <li class="nav__item ">
+                                 <a class="nav__link @ViewBag.ActiveHome" href="/">@Resources.Resource.menu_main</a>
+                             </li>
+                             <li class="nav__item">
+                                 <a class="nav__link @ViewBag.ActiveProduct">@Resources.Resource.menu_products <i class="fas fa-angle-down"></i></a>
+                                 <ul class="nav__item nav__drop-down">
+                                     @foreach (var category in ViewBag.Category)
+                                     {
+                                         <li class="nav__item"><a class="nav__link" href="/category/@category.UrlName">@category.Name</a></li>
+                                     }
+                                 </ul>
+                             </li>
+                             <li class="nav__item">
+                                 <a class="nav__link">@Resources.Resource.menu_lazer <i class="fas fa-angle-down"></i></a>
+                                 <ul class="nav__item nav__drop-down">
+                                     <li class="nav__item"><a class="nav__link @ViewBag.ActiveMaterials" href="/materials/">@Resources.Resource.menu_lazer_materials</a></li>
+                                     <li class="nav__item"><a class="nav__link @ViewBag.ActivePrice" href="/price/">@Resources.Resource.menu_lazer_price</a></li>
+                                     <li class="nav__item"><a class="nav__link @ViewBag.ActiveOrderInfo" href="/info/">@Resources.Resource.menu_lazer_info</a></li>
+                                 </ul>
+                             </li>
+                             <li class="nav__item">
+                                 <a class="nav__link">@Resources.Resource.menu_uv_header <i class="fas fa-angle-down"></i></a>
+                                 <ul class="nav__item nav__drop-down">
+                                     <li class="nav__item"><a class="nav__link @ViewBag.ActiveUVPrinting" href="/uvprinting/">@Resources.Resource.menu_lazer_price</a></li>
+                                 </ul>
+                             </li>
+                             <li class="nav__item">
+                                 <a class="nav__link @ViewBag.ActiveFeedback" href="/feedback/">@Resources.Resource.menu_reviews</a>
+                             </li>
+                             <li class="nav__item">
+                                 <a class="nav__link  @ViewBag.ActiveContact" href="/contacts/">@Resources.Resource.menu_contacts</a>
+                             </li>
+                         </ul>
+                     </nav>
+                     <a href="/cart/" class="shopping-cart">
+                         <span class="hopping-cart__counter"></span>
+                         <img class="shopping-cart__icon" src="~/Content/images/_cart.png">
+                     </a>
+                 </div>
+             </div>
+         </header>
+     }
+     @RenderBody()
+     <footer class="footer">
+         <div class="wrapper">
+             <div class="footer-container">
+                 <div class="footer-top">
+                     <div class="footer-left">
+                         <a class="footer__logo" href="#">
+                             <img src="~/Content/images/footer-logo.svg" alt="Lazer-Svit Лазерная резка и гравировка" title="Дизайнерская студия  LS">
+                         </a>
+                         <nav class="footer-nav">
+                             <a class="footer__link" href="/">@Resources.Resource.menu_main</a>
+                             <a class="footer__link" href="/contacts/">@Resources.Resource.menu_contacts</a>
+                         </nav>
+                     </div>
+                     <div class="footer-center">
+                         <div class="footer-contact__info">
+                             <i class="fas fa-map-marker-alt"></i>
+                             <p class="footer__addres">@Resources.Resource.contact_adress <br>@Resources.Resource.contact_adress_street</p>
+                         </div>
+                         <div class="footer-contact__info">
+                             <i class="fas fa-phone"></i>
+                             <div class="footer__phone">
+                                 <a href="tel:+380939174489"> +38 (093) 917-44-89 </a>
+                                 <a href="tel:+380971945130"> +38 (097) 194-51-30 </a>
+                             </div>
+                         </div>
+                         <div class="footer-contact__info">
+                             <i class="fas fa-envelope"></i>
+                             <p class="footer__email"><a href="mailto:infolazersvit@gmail.com">infolazersvit@gmail.com</a></p>
+                         </div>
+                     </div>
+                     <div class="footer-right">
+                         <p class="footer__about-company">
+                             <span> <b>@Resources.Resource.contact_about</b></span>
+                             @Resources.Resource.main_title_h1. @Resources.Resource.main_title_h2.
+                         </p>
+                         <div class="footer-social__icons">
+                             <a href="https://www.instagram.com/lazersvit/"><i class="fab fa-instagram"></i></a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="footer-bottom">
+                     <p class="footer-company-name">Copyright &copy; 2019 Lazer-Svit @Resources.Resource.footer_copyright All Right Reserved</p>
+                 </div>
+             </div>
+         </div>
+     </footer>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script type="text/javascript" src="~/Content/script/script.js"></script>
+     <script type="text/javascript" src="~/Content/script/fotorama.dev.js"></script>
+     @**<script type="text/javascript" src="~/Content/script/checkout.js"></script>*@
+ </body>
+ </html>

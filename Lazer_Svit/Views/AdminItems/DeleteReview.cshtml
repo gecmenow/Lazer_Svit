@@ -1,0 +1,35 @@
+﻿@model Lazer_Svit.Models.AdminItem
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".remove__link").click(function () {
+            var id = $(this).attr("data-id");
+            var itemId = $(this).attr("data-item-id");
+            url = "@Url.Action("DeleteReview", "AdminItems")?reviewId=" + id + "&itemId=" + itemId;
+            $('#result').load(url);
+        });
+    })
+</script>
+
+<div id="result">
+    <div class="reviews">
+        <blockquote>
+            @foreach (var review in Model.Reviews)
+            {
+                <header>
+                    <span data-rating="@review.UserRating">
+                        <i class="ion-star"></i>
+                        <i class="ion-star"></i>
+                        <i class="ion-star"></i>
+                        <i class="ion-star"></i>
+                        <i class="ion-star"></i>
+                    </span>
+                    <span><em>@review.UserName</em></span>
+                    <span>@review.ReviewPostDate</span>
+                </header>
+                <p>@review.UserReview</p>
+                <button type="button" class="btn btn-danger remove__link" data-id="@review.Id">Удалить</button>
+            }
+        </blockquote>
+    </div>

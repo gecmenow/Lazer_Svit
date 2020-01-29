@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = Resources.Resource.menu_reviews;
+}
+
+
+@model IEnumerable<Lazer_Svit.Models.Database.DbFeedback>
+
+<main class="main">
+    <section class="reviews">
+        <div class="wrapper">
+            <div class="reviews-content">
+                <div class="reviews">
+                    @foreach (var data in Model)
+                    {
+                        <blockquote>
+                            <header>
+                                <span data-rating="@data.UserRating">
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                    <i class="ion-star"></i>
+                                </span>
+                                <span><em>@data.UserName</em></span>
+                                <span>@data.ReviewPostDate.ToShortDateString()</span>
+                            </header>
+                            <p>@data.UserReview</p>
+                        </blockquote>
+                    }
+                </div>
+                <h2 class="reviews__title">
+                    @Resources.Resource.reviews_header
+                </h2>
+                <form class="reviews-form" method="post">
+                    <div class="form-input-wrapper">
+                        <input class="form-input form-input__name" type="text" name="name" placeholder="@Resources.Resource.form_name">
+                        <div class="form-input__underlined"></div>
+                        <i class="form-input__icon fas fa-user"></i>
+                        <div class="error-message name__error-message">Введите имя и фамилию.</div>
+                    </div>
+                    <div class="form-input-wrapper">
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__email" type="email" name="email" placeholder="@Resources.Resource.form_mail">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-envelope-open"></i>
+                            <div class="error-message email__error-message">Введите корректный адрес электронной почты.</div>
+                        </div>
+                    </div>
+                    <div class="form-input-wrapper">
+                        <fieldset class="rating">
+                            <p class="rating__caption">@Resources.Resource.form_score</p>
+                            <div class="rating__group">
+                                <input class="rating__star" type="radio" name="rate" value="1" aria-label="Ужасно" checked>
+                                <input class="rating__star" type="radio" name="rate" value="2" aria-label="Сносно">
+                                <input class="rating__star" type="radio" name="rate" value="3" aria-label="Нормально">
+                                <input class="rating__star" type="radio" name="rate" value="4" aria-label="Хорошо">
+                                <input class="rating__star" type="radio" name="rate" value="5" aria-label="Отлично">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-input-wrapper input-wrapper__height">
+                        <textarea class="form-textarea form-textarea__message" name="message" placeholder="@Resources.Resource.form_text"></textarea>
+                        <div class="form-input__underlined"></div>
+                        <i class="form-textarea__icon fas fa-comment"></i>
+                        <div class="error-message message__error-message">Введите сообщение.</div>
+                    </div>
+                    <button class="form-button" type="submit">@Resources.Resource.reviews_button</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="~/Content/script/form-check.js"></script>

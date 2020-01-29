@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Изменение данных";
+}
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+
+<main class="main">
+    <section class="change-password">
+        <div class="wrapper">
+            <form class="form-login" action="/admin/ChangeLogin" method="post">
+                <h1 class="login__title">Смена логина</h1>
+                <input type="text" class="login__input" name="oldName" placeholder="Старый логин" autofocus required>
+                <input type="text" class="login__input" name="newName" placeholder="Новый логин" required>
+                <input type="submit" value="Применить" class="login__button">
+            </form>
+            <form class="form-password" action="/admin/ChangePassword" method="post">
+                <h1 class="login__title">Смена пароля</h1>
+                <input type="password" class="login__input" name="oldPass" placeholder="Старый пароль" autofocus required>
+                <input type="password" class="login__input" name="newPass" placeholder="Новый пароль" required>
+                <input type="submit" value="Применить" class="login__button">
+            </form>
+        </div>
+    </section>
+</main>

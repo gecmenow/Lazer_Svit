@@ -1,0 +1,60 @@
+﻿<script>
+    $(document).ready(function () {
+        $(".RemoveLink").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteOrder", "AdminOrders")?id=" + id;
+            $('#result').load(url);
+            });
+    })
+</script>
+
+@model IEnumerable<Lazer_Svit.Models.AdminOrder>
+
+<!--result ДЛЯ ВЫВОДА-->
+<div id="result">
+    <main class="main">
+        <section class="admin-order">
+            <div class="admin-order-wrapper">
+                <table class="order-table">
+                    <thead>
+                        <tr>
+                            <th>Опции</th>
+                            <th>ID</th>
+                            <th>Дата заказа</th>
+                            <th>Статус заказа</th>
+                            <th>Статус оплаты</th>
+                            <th>Способ оплаты</th>
+                            <th>Способ доставки</th>
+                            <th>Иформация для доставки</th>
+                            <th>Заказанный товар</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model)
+                        {
+                            <tr>
+                                <th>
+                                    <!--<button type="button" class="btn btn-success" data-title="Заказ выполнен"><i class="fas fa-check-circle"></i></button><br>-->
+                                    <button type="button" class="btn btn-warning" data-title="Редактировать заказ" data-id="@data.Id"><i class="fas fa-edit"></i></button><br>
+                                    <button type="button" class="btn btn-danger" data-title="Удалить заказ" data-id="@data.Id"><i class="fas fa-trash-alt"></i></button>
+                                </th>
+                                <th>@data.Id</th>
+                                <th>@data.OrderTime</th>
+                                <th>@data.OrderStatus</th>
+                                <th>@data.PaymentStatus</th>
+                                <th>@data.Payment</th>
+                                <th>@data.Delivery</th>
+                                <th>@data.City; @data.Region</th>
+                                <th>@data.Items</th>
+                                <th>@data.TotalCost</th>
+                                <!-- <td><a href="/admin/items/edit/@data.Id" class="btn btn-warning">Изменить</a><button href="#" class="btn btn-danger RemoveLink" data-id="@data.Id">Удалить</button></td> -->
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+

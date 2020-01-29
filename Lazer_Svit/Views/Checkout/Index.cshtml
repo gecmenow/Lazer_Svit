@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = Resources.Resource.menu_checkout;
+}
+
+@model Lazer_Svit.Models.Checkout
+
+<main class="main">
+    <section class="checkout">
+        <div class="wrapper">
+            <h2 class="checkout__title">@Resources.Resource.checkout_header</h2>
+            <div class="checkout-content">
+                <form class="contact-form checkout-form" action="/Checkout/Confirm/" method="post" id="firstform">
+                    <h3 class="checkout-step__title"><span>1</span>@Resources.Resource.checkout_cont_header</h3>
+                    <div class="form-header">
+                        <label>@Resources.Resource.checkout_cont_name</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__name" type="text" name="name">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-user"></i>
+                            <div class="error-message name__error-message">Введите имя и фамилию</div>
+                        </div>
+                        <label>@Resources.Resource.checkout_cont_phone</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__tel" type="tel" name="tel">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-phone"></i>
+                            <div class="error-message tel__error-message">Введите мобильный телефон</div>
+                        </div>
+                        <label>@Resources.Resource.checkout_cont_mail</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__email" type="email" name="email">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-envelope"></i>
+                            <div class="error-message email__error-message">Введите корректный адрес электронной почты.</div>
+                        </div>
+                    </div>
+                    <h3 class="checkout-step__title"><span>2</span>@Resources.Resource.checkout_adress_header</h3>
+                    <div class="form-middle">
+                        <input type="checkbox" name="no_delivery" id="no_delivery" class="no_delivery" autocomplete="off">
+                        <label for="no_delivery">@Resources.Resource.checkout_adress_no_deliv</label><br>
+                        <label>@Resources.Resource.checkout_adress_region</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__region" type="text" name="region">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-city"></i>
+                            <div class="error-message address__error-message">Введите область</div>
+                        </div>
+                        <label>@Resources.Resource.checkout_adress_city</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__city" type="text" name="city">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-city"></i>
+                            <div class="error-message address__error-message">Введите город</div>
+                        </div>
+                        <label>@Resources.Resource.checkout_adress_adress</label>
+                        <div class="form-input-wrapper">
+                            <input class="form-input form-input__address" type="text" name="address">
+                            <div class="form-input__underlined"></div>
+                            <i class="form-input__icon fas fa-city"></i>
+                            <div class="error-message address__error-message">Введите Адрес или Номер склад Новой Почты</div>
+                        </div>
+                    </div>
+                    <h3 class="checkout-step__title"><span>3</span>@Resources.Resource.checkout_pay_header</h3>
+                    <div class="form-bottom">
+                        <label>@Resources.Resource.checkout_deliv:</label>
+                        <div class="form-radio-button">
+                            <input class="radio-input form-input__delivery" id="samovyvoz" type="radio" name="delivery" value="Самовывоз" checked> <label for="samovyvoz">@Resources.Resource.checkout_deliv_myself</label><br>
+                            <span class="workshop__address">
+                                @Resources.Resource.checkout_deliv_adress
+                            </span>
+                            <input class="radio-input form-input__delivery" id="nova_pochta" type="radio" name="delivery" value="Новая&nbsp;Почта"> <label for="nova_pochta">@Resources.Resource.checkout_deliv_post</label><br>
+                            <input class="radio-input form-input__delivery" id="kurer_novoj_pochty" type="radio" name="delivery" value="Курьер&nbsp;Новой&nbsp;Почты"> <label for="kurer_novoj_pochty">@Resources.Resource.checkout_deliv_post_cour</label><br>
+                        </div>
+                        <label>@Resources.Resource.checkout_deliv?</label>
+                        <div class="form-radio-button">
+                            <input class="radio-input form-input__payment" id="nalichnymi" type="radio" name="payment" value="Наличными" checked> <label for="nalichnymi">@Resources.Resource.checkout_pay_cash</label><br>
+                            <input class="radio-input form-input__payment" id="na_kartu" type="radio" name="payment" value="На&nbsp;карту&nbsp;ПриватБанка"> <label for="na_kartu">@Resources.Resource.checkout_pay_pb_card</label><br>
+                            <input class="radio-input form-input__payment" id="visa_mastercard" type="radio" name="payment" value="Visa/MaterCard"> <label for="visa_mastercard">@Resources.Resource.checkout_pay_visa_card</label><br>
+                        </div>
+                        <input type="hidden" class="form-input__liqPayId" name="liqPayId" value="@Model.LiqPayId" />
+                    </div>
+                </form>
+                <div class="bill">
+                    <div class="totall-bill">
+                        <h3 class="checkout-step__title">@Resources.Resource.checkout_total</h3>
+                        <div class="totall-bill-top">
+                            <div class="totall-bill-top__title">
+                                @Resources.Resource.checkout_total_to_pay
+                            </div>
+                            <div class="totall-bill-top__field">@Model.totalAmount <span>@Resources.Resource.money</span></div>
+                        </div>
+                        <div class="confirmation">
+                            <button class="confirmation__button">@Resources.Resource.checkout_confirm</button>
+                        </div>
+                        <a href="/cart/" class="check-edit-order">@Resources.Resource.checkout_edit_order</a>
+                        <form method="post" accept-charset="utf-8" action="https://www.liqpay.ua/api/3/checkout" id="secondform">
+                            <input type="hidden" name="data" value="@Model.PaymentData.data" />
+                            <input type="hidden" name="signature" value="@Model.PaymentData.signature" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="decoy"></div>
+<script type="text/javascript" src="~/Content/script/checkout.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.confirmation__button').click(function () {
+            if ($('.form-input__payment:checked').val() == "Visa/MaterCard")
+            {
+                var name = $('.form-input__name').val();
+                var tel = $('.form-input__tel').val();
+                var email = $('.form-input__email').val();
+                var region = $('.form-input__region').val();
+                var city = $('.form-input__city').val();
+                var adress = $('.form-input__address').val();
+                var delivery = $('.form-input__delivery:checked').val();
+                var payment = $('.form-input__payment:checked').val();
+                var country = "Украина";
+                var liqPayId = $('.form-input__liqPayId').val();
+                url = "@Url.Action("ConfirmLiqPay", "Checkout")?name=" + name + "&tel=" + tel + "&email=" + email
+                    + "&region=" + region + "&city=" + city + "&adress=" + adress + "&delivery=" + delivery
+                    + "&payment=" + payment + "&country=" + country + "&liqPayId=" + liqPayId;
+
+                $('.decoy').load(url);
+            }
+
+            CheckoutConfirm();
+        });
+    })
+</script>

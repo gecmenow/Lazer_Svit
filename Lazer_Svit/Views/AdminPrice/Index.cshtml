@@ -1,0 +1,515 @@
+﻿
+@{
+    ViewBag.Title = "Цены";
+}
+
+@model Lazer_Svit.Models.Price
+
+@section AdminHeader
+{
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-nav">
+                <button class="menu-toggle">
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/userWorks/">Индивидуальные товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/orders/">Заказы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/items/">Товары</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/feedbacks/">Отзывы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/price/">Прайс услуг</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="/admin/account/">Смена пароля</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+}
+
+<main class="main">
+    <section class="admin-price">
+        <div class="admin-price-wrapper">
+            <form class="price-edit" action="/admin/UV" method="post">
+                <h3 class="price__subtitle">УФ Печать</h3>
+                <table class="price__table">
+                    <button type="button" class="btn btn-success btnAddRow">Добавить строку</button>
+                    <button type="button" class="btn btn-success btnAddCol">Добавить столбец</button>
+                    <p>* Чтобы поле было пустым и отображалось (не нарушало целостность таблицы) поставьте 1 пробел</p><br />
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            @foreach (var data in Model.uvPrintingHeaders)
+                            {
+                                if (data.cells1 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells2 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells3 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells4 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells5 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells6 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells7 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells8 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells9 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells10 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells11 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells12 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells13 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells14 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells15 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells16 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells17 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells18 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells19 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                                if (data.cells20 != "")
+                                {
+                                    <th style="text-align: center;">
+                                        <button type="button" class="btn btn-danger removeCol"><i class="fas fa-trash-alt"></i></button>
+                                    </th>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th style="text-align: center;">
+                                Название <br> cтолбца/строки
+                                <input type="text" name="cells1" style="display: none;">
+                            </th>
+                            @foreach (var data in Model.uvPrintingHeaders)
+                            {
+                                if (data.cells2 != "")
+                                {
+                                    <th><input type="text" name="cells2" value="@data.cells2"></th>
+                                }
+                                if (data.cells3 != "")
+                                {
+                                    <th><input type="text" name="cells3" value="@data.cells3"></th>
+                                }
+                                if (data.cells4 != "")
+                                {
+                                    <th><input type="text" name="cells4" value="@data.cells4"></th>
+                                }
+                                if (data.cells5 != "")
+                                {
+                                    <th><input type="text" name="cells5" value="@data.cells5"></th>
+                                }
+                                if (data.cells6 != "")
+                                {
+                                    <th><input type="text" name="cells6" value="@data.cells6"></th>
+                                }
+                                if (data.cells7 != "")
+                                {
+                                    <th><input type="text" name="cells7" value="@data.cells7"></th>
+                                }
+                                if (data.cells8 != "")
+                                {
+                                    <th><input type="text" name="cells8" value="@data.cells8"></th>
+                                }
+                                if (data.cells9 != "")
+                                {
+                                    <th><input type="text" name="cells9" value="@data.cells9"></th>
+                                }
+                                if (data.cells10 != "")
+                                {
+                                    <th><input type="text" name="cells10" value="@data.cells10"></th>
+                                }
+                                if (data.cells11 != "")
+                                {
+                                    <th><input type="text" name="cells11" value="@data.cells11"></th>
+                                }
+                                if (data.cells12 != "")
+                                {
+                                    <th><input type="text" name="cells12" value="@data.cells12"></th>
+                                }
+                                if (data.cells13 != "")
+                                {
+                                    <th><input type="text" name="cells13" value="@data.cells13"></th>
+                                }
+                                if (data.cells14 != "")
+                                {
+                                    <th><input type="text" name="cells14" value="@data.cells14"></th>
+                                }
+                                if (data.cells15 != "")
+                                {
+                                    <th><input type="text" name="cells15" value="@data.cells15"></th>
+                                }
+                                if (data.cells16 != "")
+                                {
+                                    <th><input type="text" name="cells16" value="@data.cells16"></th>
+                                }
+                                if (data.cells17 != "")
+                                {
+                                    <th><input type="text" name="cells17" value="@data.cells17"></th>
+                                }
+                                if (data.cells18 != "")
+                                {
+                                    <th><input type="text" name="cells18" value="@data.cells18"></th>
+                                }
+                                if (data.cells19 != "")
+                                {
+                                    <th><input type="text" name="cells19" value="@data.cells19"></th>
+                                }
+                                if (data.cells20 != "")
+                                {
+                                    <th><input type="text" name="cells20" value="@data.cells20"></th>
+                                }
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.uvPrinting)
+                        {
+                            <tr>
+                                @*@if (data.cells1 != "" && data.cells2 != "" && data.cells3 != "" && data.cells4 != "" && data.cells5 != "" && data.cells6 != "" && data.cells7 != "" && data.cells8 != "" && data.cells9 != "" && data.cells10 != "" && data.cells11 != "" && data.cells12 != "" && data.cells13 != "" && data.cells14 != "" && data.cells15 != "" && data.cells16 != "" && data.cells17 != "" && data.cells18 != "" && data.cells19 != "" && data.cells20 != "")
+                                {
+                                    <th style="text-align: center;"><button type="button" class="btn btn-danger removeRow"><i class="fas fa-trash-alt"></i></button></th>
+                                }*@
+                                <th style="text-align: center;"><button type="button" class="btn btn-danger removeRow"><i class="fas fa-trash-alt"></i></button></th>
+                                @if (data.cells1 != "")
+                                {
+                                    <th><input type="text" name="cells1" value="@data.cells1"></th>
+                                }
+                                @if (data.cells2 != "")
+                                {
+                                    <td><input type="text" name="cells2" value="@data.cells2"></td>
+                                }
+                                @if (data.cells3 != "")
+                                {
+                                    <td><input type="text" name="cells3" value="@data.cells3"></td>
+                                }
+                                @if (data.cells4 != "")
+                                {
+                                    <td><input type="text" name="cells4" value="@data.cells4"></td>
+                                }
+                                @if (data.cells5 != "")
+                                {
+                                    <td><input type="text" name="cells5" value="@data.cells5"></td>
+                                }
+                                @if (data.cells6 != "")
+                                {
+                                    <td><input type="text" name="cells6" value="@data.cells6"></td>
+                                }
+                                @if (data.cells7 != "")
+                                {
+                                    <td><input type="text" name="cells7" value="@data.cells7"></td>
+                                }
+                                @if (data.cells8 != "")
+                                {
+                                    <td><input type="text" name="cells8" value="@data.cells8"></td>
+                                }
+                                @if (data.cells9 != "")
+                                {
+                                    <td><input type="text" name="cells9" value="@data.cells9"></td>
+                                }
+                                @if (data.cells10 != "")
+                                {
+                                    <td><input type="text" name="cells10" value="@data.cells10"></td>
+                                }
+                                @if (data.cells11 != "")
+                                {
+                                    <td><input type="text" name="cells11" value="@data.cells11"></td>
+                                }
+                                @if (data.cells12 != "")
+                                {
+                                    <td><input type="text" name="cells12" value="@data.cells12"></td>
+                                }
+                                @if (data.cells13 != "")
+                                {
+                                    <td><input type="text" name="cells13" value="@data.cells13"></td>
+                                }
+                                @if (data.cells14 != "")
+                                {
+                                    <td><input type="text" name="cells14" value="@data.cells14"></td>
+                                }
+                                @if (data.cells15 != "")
+                                {
+                                    <td><input type="text" name="cells15" value="@data.cells15"></td>
+                                }
+                                @if (data.cells16 != "")
+                                {
+                                    <td><input type="text" name="cells16" value="@data.cells16"></td>
+                                }
+                                @if (data.cells17 != "")
+                                {
+                                    <td><input type="text" name="cells17" value="@data.cells17"></td>
+                                }
+                                @if (data.cells18 != "")
+                                {
+                                    <td><input type="text" name="cells18" value="@data.cells18"></td>
+                                }
+                                @if (data.cells19 != "")
+                                {
+                                    <td><input type="text" name="cells19" value="@data.cells19"></td>
+                                }
+                                @if (data.cells20 != "")
+                                {
+                                    <td><input type="text" name="cells20" value="@data.cells20"></td>
+                                }                            
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="prise-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            </form>
+            <form class="price-edit" action="/admin/Acrylic" method="post">
+                <h3 class="price__subtitle">Лазерная порезка: фанера, мдф, двп, osb, картон</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>Толщина материала, мм.</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (до 100 м.)</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (до 1000 м.)</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (свыше 1000 м.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.acrylics)
+                        {
+                            <tr>
+                                <td><input type="text" name="materialThickness" value="@data.MaterialThickness"></td>
+                                <td><input type="text" name="lowCost" value="@data.lowCost"></td>
+                                <td><input type="text" name="midCost" value="@data.midCost"></td>
+                                <td><input type="text" name="highCost" value="@data.highCost"></td>
+                            </tr><!-- должно быть 11строк -->
+                        }
+                    </tbody>
+                </table>
+                <div class="prise-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            </form>
+            <form class="price-edit" action="/admin/Woods" method="post">
+                <h3 class="price__subtitle">Лазерная порезка Акрила</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>Толщина материала, мм.</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (до 100 м.)</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (до 1000 м.)</th>
+                            <th><span>Стоимость, </span>грн. за м.п. (свыше 1000 м.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.woods)
+                        {
+                            <tr>
+                                <td><input type="text" name="materialThickness" value="@data.MaterialThickness"></td>
+                                <td><input type="text" name="lowCost" value="@data.lowCost"></td>
+                                <td><input type="text" name="midCost" value="@data.midCost"></td>
+                                <td><input type="text" name="highCost" value="@data.highCost"></td>
+                            </tr><!-- должно быть 9строк -->
+                        }
+                    </tbody>
+                </table>
+                <div class="prise-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            </form>
+            <form class="price-edit" action="/admin/Engraving" method="post">
+                <h3 class="price__subtitle">Лазерная гравировка</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th>Тип материала</th>
+                            <th>цена, грн./см²</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.engraving)
+                        {
+                            <tr>
+                                <td><input type="text" name="type" value="@data.Type" readonly></td>
+                                <td><input type="text" name="price" value="@data.Price"></td>
+                            </tr><!-- должно быть 5строк -->
+                        }
+                    </tbody>
+                </table>
+                <div class="prise-edit__wrapper">
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-secondary">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/instafeed.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript">
+
+        $('.btnAddRow').click(function () {
+            let default_row = $(this).nextAll('table').children('tbody').children('tr').eq(-1).clone();
+            for (let i = 0; i < default_row.children().children().length; i++) {
+                default_row.children().children().eq(i).attr("value", "");
+                default_row.children().children().eq(i).val("");
+            }
+            default_row.appendTo($(this).nextAll('table').eq(0).children('tbody'));
+        });
+        $('.btnAddCol').click(function () {
+            let default_col_btn =$(this).nextAll('table').children('thead').children('tr').eq(0).children().eq(-1).clone();
+            let default_col_head = $(this).nextAll('table').children('thead').children('tr').eq(-1).children().eq(-1).clone();
+            default_col_head.children().attr("value", "");
+            default_col_head.children().val("");
+
+            let col_num = parseInt(default_col_head.children().attr('name').replace(/\D+/g,""));
+            default_col_head.children().attr('name',`cells${col_num+1}`);
+
+            default_col_btn.appendTo($(this).nextAll('table').eq(0).children('thead').children().eq(0));
+            default_col_head.appendTo($(this).nextAll('table').eq(0).children('thead').children().eq(-1));
+            for (let i = 0; i < $('tbody tr').length; i++) {
+                let default_col_item = $(this).nextAll('table').eq(0).children('tbody').children().eq(-1).children().eq(-1).clone();
+                default_col_item.children().attr("value", "");
+                default_col_item.children().val("");
+                default_col_item.children().attr('name',`cells${col_num+1}`);
+                default_col_item.appendTo($(this).nextAll('table').eq(0).children('tbody').children().eq(i))
+            }
+        });
+        $(".removeCol").click(function(){
+            let thisTable = $(this).parents().parents('table');
+            let thisIndex = $(this).parent().index();
+
+            if(thisTable.children("thead").children().eq(0).children().length>3)
+            {
+                for(let i = 0; i < thisTable.children("thead").children().length; i++)
+                {
+                    thisTable.children("thead").children().eq(i).children().eq(thisIndex).remove()
+                }
+                for(let i = 0; i < thisTable.children("tbody").children().length; i++)
+                {
+                    thisTable.children("tbody").children().eq(i).children().eq(thisIndex).remove()
+                }
+                for(let i = thisIndex; i < thisTable.children("thead").children().eq(0).children().length; i++)
+                {
+                    for(let j = 0; j < thisTable.children("tbody").children().length; j++)
+                    {
+                        let col_num = parseInt(thisTable.children("tbody").children().eq(j).children().eq(i).children().attr('name').replace(/\D+/g,""));
+                        thisTable.children("tbody").children().eq(j).children().eq(i).children().attr('name',`cells${col_num-1}`)
+                    }
+                        let col_num = parseInt(thisTable.children("thead").children().eq(-1).children().eq(i).children().attr('name').replace(/\D+/g,""));
+                        thisTable.children("thead").children().eq(-1).children().eq(i).children().attr('name',`cells${col_num-1}`)
+
+                }
+            }
+        });
+        $(".removeRow").click(function(){
+            thisTable = $(this).parents().parents('table');
+            thisIndex = $(`.${thisTable[0].className} .removeRow`).index($(this));
+            if($(this).parents("tbody").children().length>1){
+                thisTable.children("tbody").children().eq(thisIndex).remove();
+            }
+        });
+</script>

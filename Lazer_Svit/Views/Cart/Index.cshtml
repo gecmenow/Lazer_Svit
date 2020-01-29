@@ -1,0 +1,193 @@
+﻿﻿@{
+    ViewBag.Title = Resources.Resource.menu_cart;
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.item__plus').click(function () {
+            let input = $(this).siblings('.input_value');
+            let inputValue = $(this).siblings('.input_value').val();
+
+            if (inputValue == "") {
+                inputValue = 1;
+            }
+
+            inputValue = parseFloat(inputValue) + 1;
+            input.val(inputValue); 
+
+            var id = $(this).siblings().eq(0).attr('data-id');
+            var quantity = $(this).siblings().eq(0).val();
+            url = "@Url.Action("EditItemQuantity", "Cart")?id=" + id + "&quantity=" + quantity;
+            
+            let price = $(this).parent().siblings();
+            let priceValue = $(price[1]).text().replace(/[,]/g, ".");
+
+            priceValue = parseFloat(priceValue) * Number(inputValue);
+            
+            priceValue = +(Math.round(priceValue + "e+2") + "e-2");
+
+            let totalPrice = $(price[2]).children(".price").text(priceValue);
+
+            totalCost();
+
+            $('.decoy').load(url);
+        });
+        $('.item__minus').click(function () {
+            let input = $(this).siblings('.input_value');
+            let inputValue = $(this).siblings('.input_value').val();
+            if (inputValue > 1)
+            {
+                inputValue = parseFloat(inputValue) - 1;
+                input.val(inputValue);
+            } 
+
+            var id = $(this).siblings().eq(1).attr('data-id');
+            var quantity = $(this).siblings().eq(1).val();
+            url = "@Url.Action("EditItemQuantity", "Cart")?id=" + id + "&quantity=" + quantity;
+            
+            let price = $(this).parent().siblings();
+            let priceValue = $(price[1]).text().replace(/[,]/g, ".");
+
+            priceValue = parseFloat(priceValue) * Number(inputValue);
+
+            priceValue = +(Math.round(priceValue + "e+2") + "e-2");
+
+            let totalPrice = $(price[2]).children(".price").text(priceValue);
+
+            totalCost();
+            
+            $('.decoy').load(url);
+        });
+
+        $(".remove__link").click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("DeleteItem", "Cart")?id=" + id;
+            $('#result').load(url);
+        });
+
+        $('.input_value').bind("keydown change keyup input click", function(e) {
+          let thisVal = $(this).val();
+          if (this.value.match(/[^0-9]/g)) 
+          {
+            this.value = this.value.replace(/[^0-9]/g, '');
+          }
+          else if (this.value.match(/[^0-9]|^0{1}/g)) 
+          {
+            this.value = this.value.replace(/^0+/, '');     
+          }   
+        });
+
+        $(".input_value").keyup(function () {
+            var id = $(this).attr('data-id');
+            var quantity = $(this).val();
+            if ($(this).val() == 0) {
+                quantity = 1;
+            }
+            url = "@Url.Action("EditItemQuantity", "Cart")?id=" + id + "&quantity=" + quantity;
+    
+            let price = $(this).parent().siblings();
+   
+            let priceValue = $(price[1]).text().replace(/[,]/g, ".");
+
+            priceValue = parseFloat(priceValue) * Number(quantity);
+    
+            priceValue = +(Math.round(priceValue + "e+2") + "e-2");
+
+            priceValue = String(priceValue).replace(/[.]/g, ",");
+
+            let totalPrice = $(price[2]).children(".price").text(priceValue);
+
+            totalCost();
+
+            $('.decoy').load(url);
+        });
+
+        function totalCost()
+        {
+            var price = $(".price");
+
+            var sum = 0;
+
+            for (var i = 0; i < price.length; i++)
+            {
+                var number = parseFloat(price.eq(i).text().replace(/[,]/g, "."));
+
+                sum += number;
+            }
+
+            sum = +(Math.round(sum + "e+2") + "e-2");
+
+            sum = String(sum).replace(/[.]/g, ",");
+
+            $(".total__price span").first().html(sum);
+        }
+    })
+</script>
+
+@model IEnumerable<Lazer_Svit.Models.Cart>
+
+<main class="main">
+    <!--result ДЛЯ ВЫВОДА-->
+    <div id="result">
+        <section class="cart">
+            <div class="wrapper">
+                @if (Model.Count() != 0)
+                {
+                    <div class="cart-content">
+                        <div class="cart__list">
+                            <div class="cart__header">
+                                <div class="col-lg-6 col-md-6 col-sm-12">@Resources.Resource.cart_name</div>
+                                <div class="col-lg-2 col-md-2 col-sm-12">@Resources.Resource.cart_price</div>
+                                <div class="col-lg-2 col-md-2 col-sm-12">@Resources.Resource.cart_amount</div>
+                                <div class="col-lg-2 col-md-2 col-sm-12">@Resources.Resource.cart_total_item_price</div>
+                            </div>
+                            @foreach (var cart in Model)
+                            {
+                                <div class="cart__item">
+                                    <p class="col-lg-6 col-md-6 col-sm-12">
+                                        <a href="/item/@cart.Item.Id" class="cart__item-link"><img src="~/Content/images/products/@cart.Item.Image" alt="@cart.Item.Name" class="cart__item-image">@cart.Item.Name</a>
+                                    </p>
+                                    <p class="col-lg-2 col-md-2 col-sm-12 cart-price">@cart.Item.Price <span>@Resources.Resource.money</span></p>
+                                    <p class="col-lg-2 col-md-2 col-sm-12 cart-count">
+                                        <span class="item__plus change__value"><i class="fas fa-plus"></i></span>
+                                        <input type="text" name="quantity" class="input_value col-lg-4" data-id="@cart.Item.Id" value="@cart.Quantity" min="1" max="10">
+                                        <span class="item__minus change__value"><i class="fas fa-minus"></i></span>
+                                    </p>
+                                    <p class="col-lg-2 col-md-2 col-sm-12 cart-total-price">
+                                        <span class="price">@cart.ItemTotalPrice </span> <span> @Resources.Resource.money</span>
+                                        <a href="#" class="remove__link" data-id="@cart.Item.Id"><button><i class="fas fa-times"></i></button></a>
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                        <h3 class="total__price">@Resources.Resource.cart_total_price: <span>@ViewBag.Price</span> <span>@Resources.Resource.money</span></h3>
+                        <a href="/checkout" class="order_button">@Resources.Resource.cart_checkout</a>
+                    </div>
+                }
+                else
+                {
+                    <p>@Resources.Resource.cart_empty</p>
+                }
+            </div>
+        </section>
+    </div>
+    <div class="fast-buy-wraper">
+        <div class="fast-buy-content">
+            <h2 class="fast-buy__title">Быстрый заказ</h2>
+            <p class="fast-buy__text">Укажите ваш контактный номер, и мы перезвоним вам для уточнения деталей заказа</p>
+            <form class="fast-buy__form">
+                <label>Мобильный телефон</label>
+                <div class="form-input-wrapper">
+                    <input class="form-input form-input__tel" type="tel" name="tel">
+                    <div class="form-input__underlined"></div>
+                    <i class="form-input__icon fas fa-phone"></i>
+                    <div class="error-message tel__error-message">Введите мобильный телефон</div>
+                </div>
+                <label class="form-input__desc"><i>Введите полный номер с региональным кодом. Например, 380935553535.<br>Или +79610000000 для неукраинских номеров</i></label>
+                <button type="submit" class="fast-buy__button">Оформить заказ</button>
+            </form>
+            <i class="fas fa-times fast-buy__close"></i>
+        </div>
+    </div>
+</main>
+<div class="decoy"></div>

@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = Resources.Resource.menu_contacts;
+}
+<main class="main">
+    <section class="contact">
+        <div class="wrapper">
+            <div class="contact-content">
+                <h2 class="contact-title">@Resources.Resource.menu_contacts</h2>
+                <div class="contact-header">
+                    <div class="contact-left">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.3969159142183!2d30.393418340885997!3d50.43274830631789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe0c6fc1037409ca!2zTGF6ZXIgU3ZpdCAtINCb0LDQt9C10YDQvdCw0Y8g0YDQtdC30LrQsCDQuCDQs9GA0LDQstC40YDQvtCy0LrQsA!5e0!3m2!1sru!2sua!4v1558190867426!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="contact-right">
+                        <div class="street">
+                            @Resources.Resource.contact_adress, @Resources.Resource.contact_adress_street
+                            <i class="fas fa-map-marker-alt contact__icon"></i>
+                        </div>
+                        <div class="phone">
+                            <a href="tel:+380939174489"> +38 (093) 917-44-89 </a>
+                            <a href="tel:+380971945130"> +38 (097) 194-51-30 </a>
+                            <i class="fas fa-phone contact__icon"></i>
+                        </div>
+                        <div class="work-time">
+                            @Resources.Resource.contact_time_1
+                            <br> @Resources.Resource.contact_time_2
+                            <i class="fas fa-clock contact__icon"></i>
+                        </div>
+                        <div class="email">
+                            <a href="mailto:infolazersvit@gmail.com">infolazersvit@gmail.com</a>
+                            <i class="fas fa-envelope contact__icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="form-title">@Resources.Resource.contact_sub_header</h2>
+                <p class="form-desc">
+                    @Resources.Resource.contact_sub_info
+                </p>
+                <form class="contact-form" method="post" enctype="multipart/form-data">
+                    <div class="form-header">
+                        <div class="form-left">
+                            <div class="form-input-wrapper">
+                                <input class="form-input form-input__name" type="text" name="name" placeholder="@Resources.Resource.form_name">
+                                <div class="form-input__underlined"></div>
+                                <i class="form-input__icon fas fa-user"></i>
+                                <div class="error-message name__error-message">Введите имя.</div>
+                            </div>
+                            <div class="form-input-wrapper">
+                                <input class="form-input form-input__email" type="email" name="email" placeholder="@Resources.Resource.form_mail">
+                                <div class="form-input__underlined"></div>
+                                <i class="form-input__icon fas fa-envelope-open"></i>
+                                <div class="error-message email__error-message">Введите корректный адрес электронной почты.</div>
+                            </div>
+                            <div class="form-input-wrapper">
+                                <input class="form-input form-input__tel" type="tel" name="tel" placeholder="@Resources.Resource.form_phone">
+                                <div class="form-input__underlined"></div>
+                                <i class="form-input__icon fas fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="form-right">
+                            <div class="form-input-wrapper input-wrapper__height">
+                                <textarea class="form-textarea form-textarea__message" name="message" placeholder="@Resources.Resource.form_text"></textarea>
+                                <div class="form-input__underlined"></div>
+                                <i class="form-textarea__icon fas fa-comment"></i>
+                                <div class="error-message message__error-message">Введите сообщение.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="custom-file-upload" class="file-upload">
+                        <span class="file-upload__name js-value">@Resources.Resource.contact_upload</span>
+                        <input type="file" name="uploads" id="custom-file-upload" />
+                        <i class="fas fa-file-upload file-upload__icon"></i>
+                    </label>
+                    <button class="form-button" type="submit">@Resources.Resource.contact_button</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="~/Content/script/form-check.js"></script>

@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<Lazer_Svit.Models.Item>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = Resources.Resource.menu_products;
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.add-to-cart').click(function () {
+            var id = $(this).attr("data-id");
+            url = "@Url.Action("AddToCart", "Cart")?id=" + id;
+            $('.decoy').load(url);
+        });
+    })
+</script>
+
+<main class="main">
+    <section class="catalog">
+        <div class="wrapper">
+            <div class="catalog-content">
+                <h2 class="catalog__title">
+                    @ViewBag.CategoryName
+                </h2>
+                <div class='sort-dropdown'>
+                    <span>@Resources.Resource.sort_header</span>
+                    @if (HttpContext.Current.Request.Cookies.Count != 0)
+                    {
+                        if (HttpContext.Current.Request.Cookies["lang"].Value == "ru")
+                        {
+                            <div class='sort-toggle'>@ViewBag.SortRu</div>
+                        }
+                        else if (HttpContext.Current.Request.Cookies["lang"].Value == "uk")
+                        {
+                            <div class='sort-toggle'>@ViewBag.SortUa</div>
+                        }
+                        else if (HttpContext.Current.Request.Cookies["lang"].Value == "en")
+                        {
+                            <div class='sort-toggle'>@ViewBag.SortEn</div>
+                        }
+                    }
+                    else
+                    {
+                        <div class='sort-toggle'>@ViewBag.SortRu</div>
+                    }
+                    <ul class="sort__list">
+                        <li class="sort__item sort__item-selected"><a href="/products/@ViewBag.EngCategoryName">@Resources.Resource.sort_new</a></li>
+                        <li class="sort__item"><a href="/products/@ViewBag.EngCategoryName/popular">@Resources.Resource.sort_pop</a></li>
+                        <li class="sort__item"><a href="/products/@ViewBag.EngCategoryName/low">@Resources.Resource.sort_low</a></li>
+                        <li class="sort__item"><a href="/products/@ViewBag.EngCategoryName/high">@Resources.Resource.sort_high</a></li>
+                    </ul>
+                </div>
+                <ul class="catalog__list">
+                    @foreach (var item in Model)
+                    {
+                        <li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                            <div class="catalog__item">
+                                <a class="catalog__item-link" href="/item/@item.Id">
+                                    <img class="catalog__item-img" src="~/Content/images/products/@item.Image">
+                                    <h3 class="catalog__item-title">@item.Name</h3>
+                                    <span class="catalog__item-price">@item.Price @Resources.Resource.money</span>
+                                </a>
+                                <button class="add-to-cart" data-id="@item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart</button>
+                                <button class="add-to-cart__fast" data-id="@item.Id"><img class="shopping-cart__icon" src="~/Content/images/_cart.png">@Resources.Resource.add_to_cart_click</button>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="fast-buy-wraper">
+        <div class="fast-buy-content">
+            <h2 class="fast-buy__title">Быстрый заказ</h2>
+            <p class="fast-buy__text">Укажите ваш контактный номер, и мы перезвоним вам для уточнения деталей заказа</p>
+            <form class="fast-buy__form">
+                <label>Мобильный телефон</label>
+                <div class="form-input-wrapper">
+                    <input class="form-input form-input__tel" type="tel" name="tel">
+                    <div class="form-input__underlined"></div>
+                    <i class="form-input__icon fas fa-phone"></i>
+                    <div class="error-message tel__error-message">Введите мобильный телефон</div>
+                </div>
+                <label class="form-input__desc"><i>Введите полный номер с региональным кодом. Например, 380935553535.<br>Или +79610000000 для неукраинских номеров</i></label>
+                <button type="submit" class="fast-buy__button">Оформить заказ</button>
+            </form>
+            <i class="fas fa-times fast-buy__close"></i>
+        </div>
+    </div>
+</main>
+<div class="decoy"></div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

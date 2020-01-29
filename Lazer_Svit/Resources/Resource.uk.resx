@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add_to_cart" xml:space="preserve">
+    <value>В кошик</value>
+  </data>
+  <data name="cart_amount" xml:space="preserve">
+    <value>Кsлькiсть</value>
+  </data>
+  <data name="cart_checkout" xml:space="preserve">
+    <value>Оформление заказа</value>
+  </data>
+  <data name="cart_empty" xml:space="preserve">
+    <value>Кошик пуст</value>
+  </data>
+  <data name="cart_name" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="cart_price" xml:space="preserve">
+    <value>Цiна</value>
+  </data>
+  <data name="cart_total_item_price" xml:space="preserve">
+    <value>Вартiсть</value>
+  </data>
+  <data name="cart_total_price" xml:space="preserve">
+    <value>Загальна вартiсть заказу</value>
+  </data>
+  <data name="checkout_details" xml:space="preserve">
+    <value>Вкажіть ваш контактний номер, і ми передзвонимо вам для уточнення деталей замовлення</value>
+  </data>
+  <data name="checkout_adress_adress" xml:space="preserve">
+    <value>Адреса або Номер склад Нової Пошти</value>
+  </data>
+  <data name="checkout_adress_city" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="checkout_adress_header" xml:space="preserve">
+    <value>Адреса доставки</value>
+  </data>
+  <data name="checkout_adress_no_deliv" xml:space="preserve">
+    <value>Доставка не потрібно</value>
+  </data>
+  <data name="checkout_adress_region" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="checkout_confirm" xml:space="preserve">
+    <value>Підтверджую замовлення</value>
+  </data>
+  <data name="checkout_cont_header" xml:space="preserve">
+    <value>Контактні дані</value>
+  </data>
+  <data name="checkout_cont_mail" xml:space="preserve">
+    <value>Ел. пошта</value>
+  </data>
+  <data name="checkout_cont_name" xml:space="preserve">
+    <value>Ім'я та прізвище</value>
+  </data>
+  <data name="checkout_cont_phone" xml:space="preserve">
+    <value>Мобільний телефон</value>
+  </data>
+  <data name="checkout_deliv" xml:space="preserve">
+    <value>Спосіб доставки</value>
+  </data>
+  <data name="checkout_deliv_adress" xml:space="preserve">
+    <value>г. Киев, проспект Леся Курбаса 2Б (будівля заводу "НВП Сатурн")</value>
+  </data>
+  <data name="checkout_deliv_myself" xml:space="preserve">
+    <value>Самовивіз</value>
+  </data>
+  <data name="checkout_deliv_post" xml:space="preserve">
+    <value>Нова Пошта</value>
+  </data>
+  <data name="checkout_deliv_post_cour" xml:space="preserve">
+    <value>Кур'єром Нової пошти</value>
+  </data>
+  <data name="checkout_edit_order" xml:space="preserve">
+    <value>Редагувати замовлення</value>
+  </data>
+  <data name="checkout_fast" xml:space="preserve">
+    <value>Швидкий заказ</value>
+  </data>
+  <data name="checkout_header" xml:space="preserve">
+    <value>Оформлення замовлення</value>
+  </data>
+  <data name="checkout_pay_cash" xml:space="preserve">
+    <value>Оплатити готівкою</value>
+  </data>
+  <data name="checkout_pay_header" xml:space="preserve">
+    <value>Вибір способів доставки і оплати</value>
+  </data>
+  <data name="checkout_pay_pb_card" xml:space="preserve">
+    <value>На карту Приват банка</value>
+  </data>
+  <data name="checkout_pay_visa_card" xml:space="preserve">
+    <value>Оплатити через Visa / Mastercard</value>
+  </data>
+  <data name="checkout_pay_way" xml:space="preserve">
+    <value>Спосіб оплатіти</value>
+  </data>
+  <data name="checkout_tel" xml:space="preserve">
+    <value>Мобiльний телефон</value>
+  </data>
+  <data name="checkout_tel_info" xml:space="preserve">
+    <value>Введіть повний номер з регіональним кодом. Наприклад, 380935553535.</value>
+  </data>
+  <data name="checkout_total" xml:space="preserve">
+    <value>Всього</value>
+  </data>
+  <data name="checkout_total_to_pay" xml:space="preserve">
+    <value>До оплати</value>
+  </data>
+  <data name="contact_about" xml:space="preserve">
+    <value>Про компанію</value>
+  </data>
+  <data name="contact_adress" xml:space="preserve">
+    <value>Київ</value>
+  </data>
+  <data name="contact_adress_street" xml:space="preserve">
+    <value>проспект Леся Курбаса, д. 2Б</value>
+  </data>
+  <data name="contact_button" xml:space="preserve">
+    <value>Надіслати повідомлення</value>
+  </data>
+  <data name="contact_sub_header" xml:space="preserve">
+    <value>Будь ласка, заповніть форму нижче і наша команда L.S. зв'яжеться з Вами незабаром</value>
+  </data>
+  <data name="contact_sub_info" xml:space="preserve">
+    <value>Для цього просимо додати чіткий опис Вашого проекту, утому числі пропишіть необхідних матеріали, розміри. Ми можемо попросити Вас надати додаткову інформацію для якісного і швидкої реалізації Вашої ідеї. Не забудьте вказати кількість, тип або колір, що Ви хочете.</value>
+  </data>
+  <data name="contact_time_1" xml:space="preserve">
+    <value>Час роботи офісу:</value>
+  </data>
+  <data name="contact_time_2" xml:space="preserve">
+    <value>Пн- Пт: 10:00 - 19:00</value>
+  </data>
+  <data name="contact_upload" xml:space="preserve">
+    <value>Завантажити файл</value>
+  </data>
+  <data name="footer_copyright" xml:space="preserve">
+    <value>Лазерна різка та гравіювання</value>
+  </data>
+  <data name="form_mail" xml:space="preserve">
+    <value>Ваша пошта</value>
+  </data>
+  <data name="form_name" xml:space="preserve">
+    <value>Ваше ім'я та прізвище</value>
+  </data>
+  <data name="form_phone" xml:space="preserve">
+    <value>Ваш номер телефону</value>
+  </data>
+  <data name="form_score" xml:space="preserve">
+    <value>Проставте оцінку:</value>
+  </data>
+  <data name="form_text" xml:space="preserve">
+    <value>Текст повідомлення</value>
+  </data>
+  <data name="header_phones" xml:space="preserve">
+    <value>Наши телефони</value>
+  </data>
+  <data name="inst_button_text" xml:space="preserve">
+    <value>Показати ще</value>
+  </data>
+  <data name="items_similar" xml:space="preserve">
+    <value>Схожі товари</value>
+  </data>
+  <data name="item_category" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="item_descr" xml:space="preserve">
+    <value>Описання</value>
+  </data>
+  <data name="item_reviews" xml:space="preserve">
+    <value>Відгуки</value>
+  </data>
+  <data name="main_descr_header" xml:space="preserve">
+    <value>ШИРОКИЙ АСОРТИМЕНТ МАТЕРІАЛІВ</value>
+  </data>
+  <data name="main_desct_text_1" xml:space="preserve">
+    <value>- це вже не нова технологія, але вона набула нові можливості разом з нашою дизайнерською студією «LS» в Києві. Лазерна порізка дозволяє розрізати або розкроїти будь-який матеріал за допомогою променя лазер високої потужності. Комп'ютерне управління, акура.</value>
+  </data>
+  <data name="main_desct_text_2" xml:space="preserve">
+    <value>- це високо-точна передача вашої задумки на дерево, шкіру, картон і т.д. Краса не має меж, як і рука людини, здатна втілити в реальність будь-який задум дизайнера.</value>
+  </data>
+  <data name="main_desct_text_gravir" xml:space="preserve">
+    <value>Гравірування нанесена лазером</value>
+  </data>
+  <data name="main_desct_text_lazer" xml:space="preserve">
+    <value>Лазерне різання</value>
+  </data>
+  <data name="main_examples_header" xml:space="preserve">
+    <value>ПРИКЛАДИ РОБІТ</value>
+  </data>
+  <data name="main_Example_1" xml:space="preserve">
+    <value>Акрил</value>
+  </data>
+  <data name="main_Example_2" xml:space="preserve">
+    <value>Пластик</value>
+  </data>
+  <data name="main_Example_3" xml:space="preserve">
+    <value>Картон</value>
+  </data>
+  <data name="main_Example_4" xml:space="preserve">
+    <value>Дерево</value>
+  </data>
+  <data name="main_Example_5" xml:space="preserve">
+    <value>Фанера</value>
+  </data>
+  <data name="main_Example_6" xml:space="preserve">
+    <value>Шкіра і тканини</value>
+  </data>
+  <data name="main_reason_first_header" xml:space="preserve">
+    <value>ЯКІСНА УКРАЇНСЬКЕ ОБЛАДНАННЯ</value>
+  </data>
+  <data name="main_reason_first_text" xml:space="preserve">
+    <value>Наше обладнання зроблено Української молодий але успішною компанією. Із застосуванням новітніх технологій і високою якістю комплектуючих.</value>
+  </data>
+  <data name="main_reason_fourth_header" xml:space="preserve">
+    <value>ДОПОМОГА З МАКЕТОМ</value>
+  </data>
+  <data name="main_reason_fourth_text" xml:space="preserve">
+    <value>Допомога в реалізації ідеї в макет. Ми докладемо максимум зусиль щоб кінцевий виріб відповідало Вашої задумом</value>
+  </data>
+  <data name="main_reason_header" xml:space="preserve">
+    <value>ПРИЧИНИ ЧОМУ ВИБИРАЮТЬ НАС</value>
+  </data>
+  <data name="main_reason_second_header" xml:space="preserve">
+    <value>ТЕРМІН ВИКОНАННЯ ЗАМОВЛЕННЯ</value>
+  </data>
+  <data name="main_reason_second_text" xml:space="preserve">
+    <value>Швидкість виконання завдання від 1 години до 7 днів великі замовлення</value>
+  </data>
+  <data name="main_reason_third_header" xml:space="preserve">
+    <value>ШВИДКІСТЬ РЕЗКИ</value>
+  </data>
+  <data name="main_reason_third_text" xml:space="preserve">
+    <value>Якість обладнання дозволяє різати з середньою швидкістю близько 25 мм / сек</value>
+  </data>
+  <data name="main_title_b" xml:space="preserve">
+    <value>Lazer Svit</value>
+  </data>
+  <data name="main_title_h1" xml:space="preserve">
+    <value>Ми - Дизайнерська студія</value>
+  </data>
+  <data name="main_title_h2" xml:space="preserve">
+    <value>Надаємо послуги з порізки та гравірування матеріалів</value>
+  </data>
+  <data name="materials_acryl_header" xml:space="preserve">
+    <value>Акрил (оргскло)</value>
+  </data>
+  <data name="materials_acryl_text" xml:space="preserve">
+    <value>Акрил ідеально підходить для лазерного різання, по обидва боки він оснащений захисною плівкою, щоб його поверхні були чистими і без подряпин. Лазерна ріжучакромка також є абсолютно чистою, при лазерного гравіювання создаеться гладка матова поверхня.</value>
+  </data>
+  <data name="materials_header" xml:space="preserve">
+    <value>Ми маємо в своєму розпорядженні широким спектром матеріалів, які ідеально підходять для лазерного різання гравірування.</value>
+  </data>
+  <data name="materials_other_text" xml:space="preserve">
+    <value>Наше обладнання може обробляти різні матеріали, якщо у нас такого матеріалу немає, ви можете відправити матеріал нам або привезти з собою в студію. Деякі матеріали, ми можемо замовити спеціально для Вас. Якщо є які-небудь матеріали, які ви хотіли б вирізати або вигравіювати лазером або фрезером, будь ласка, не соромтеся звертатися до нас по електронній пошті і питати, чи можемо ми виконати різання або гравіювання матеріалу.</value>
+  </data>
+  <data name="materials_plywood_header" xml:space="preserve">
+    <value>Фанера</value>
+  </data>
+  <data name="materials_plywood_text" xml:space="preserve">
+    <value>Фанера прекрасна альтернатива дереву. Фанеру можна розкрити або пофарбувати, вона еластична. Ми використовуємо найякісніші лісу, які відмінно ріжуться нашим лазером. Всі поверхні мають якість першого сорту, край лазерного різання темніший, ніж матеріал, але приємний. За допомогою лазерної порізка фанери можна досягти хороших і точних результатів. Незмінний плюс фанери в порівнянні з деревом - міцність, легкість і, звичайно, ціна.</value>
+  </data>
+  <data name="materilas_other_header" xml:space="preserve">
+    <value>Iнші матеріали</value>
+  </data>
+  <data name="menu_cart" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="menu_checkout" xml:space="preserve">
+    <value>Оформлення замовлення</value>
+  </data>
+  <data name="menu_contacts" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="menu_lazer" xml:space="preserve">
+    <value>Лазерне різання</value>
+  </data>
+  <data name="menu_lazer_info" xml:space="preserve">
+    <value>Інформація для замовлення</value>
+  </data>
+  <data name="menu_lazer_materials" xml:space="preserve">
+    <value>Материали</value>
+  </data>
+  <data name="menu_lazer_price" xml:space="preserve">
+    <value>Ціни</value>
+  </data>
+  <data name="menu_main" xml:space="preserve">
+    <value>Головна</value>
+  </data>
+  <data name="menu_products" xml:space="preserve">
+    <value>Товари</value>
+  </data>
+  <data name="menu_reviews" xml:space="preserve">
+    <value>Відгуки клієнтів</value>
+  </data>
+  <data name="money" xml:space="preserve">
+    <value>грн.</value>
+  </data>
+  <data name="order_info_header" xml:space="preserve">
+    <value>Інформація для замовлення</value>
+  </data>
+  <data name="order_info_info" xml:space="preserve">
+    <value>Послуга дизайнера платна її вартість становить від складності роботи і начінается- від 50 грн.</value>
+  </data>
+  <data name="order_info_subheader" xml:space="preserve">
+    <value>Якщо Ви вирішили самостійно, або за допомогою дизайнера підготувати макет, тоді зверніть увагу на такі моменти:</value>
+  </data>
+  <data name="order_info_text1" xml:space="preserve">
+    <value>Ми працюємо в векторній програмі</value>
+  </data>
+  <data name="order_info_text10" xml:space="preserve">
+    <value>в макеті на порізку і гравіювання не допускається накладення шарів і подвійних (і більше) контурів.</value>
+  </data>
+  <data name="order_info_text2" xml:space="preserve">
+    <value>Для коректної і швидкого прорахунку вартості, а також для виробництва замовлення необхідно надати макет в векторі. Найпопулярніші формати векторних графічних файлів:</value>
+  </data>
+  <data name="order_info_text3" xml:space="preserve">
+    <value>Ми також можемо прийняти макет в таких форматах як:</value>
+  </data>
+  <data name="order_info_text4" xml:space="preserve">
+    <value>Якщо ви його не підготували ми можемо зробити це за Вас.</value>
+  </data>
+  <data name="order_info_text5" xml:space="preserve">
+    <value>Враховуйте що самостійна підготовка файлу до лазерної порізки або гравірування може значно прискорити термін виконання Вашого замовлення.</value>
+  </data>
+  <data name="order_info_text6" xml:space="preserve">
+    <value>всі креслення повинні бути виконані в масштабі 1: 1;</value>
+  </data>
+  <data name="order_info_text7" xml:space="preserve">
+    <value>всі елементи призначені для різання повинні бути в кривих;</value>
+  </data>
+  <data name="order_info_text8" xml:space="preserve">
+    <value>креслення вироби повинен бути виконаний в тонких лініях;</value>
+  </data>
+  <data name="order_info_text9" xml:space="preserve">
+    <value>векторне зображення в файлі для різання не повинно містити розімкнутих точок в замкнутих контурах, заливок, накладень контурів один на одного, подвійних ліній і перетинань;</value>
+  </data>
+  <data name="order_thanks" xml:space="preserve">
+    <value>Дякуємо!</value>
+  </data>
+  <data name="order_thanks_text" xml:space="preserve">
+    <value>Ваше замовлення успішно оформлений. Ми зв'яжемося з вами найближчим часом</value>
+  </data>
+  <data name="price_header" xml:space="preserve">
+    <value>Ціни на порізку різних матеріалів</value>
+  </data>
+  <data name="price_info" xml:space="preserve">
+    <value>Зверніть увагу, вартість лазерної порізки вираховується за метр погонний різання матеріалу. Вартість лазерного гравірування обчислюється за см².</value>
+  </data>
+  <data name="price_table_1" xml:space="preserve">
+    <value>ЛАЗЕРНА РІЗКА: ФАНЕРА, МДФ, ДВП, OSB, КАРТОН</value>
+  </data>
+  <data name="price_table_2" xml:space="preserve">
+    <value>ЛАЗЕРНА ПОРІЗКА АКРИЛУ</value>
+  </data>
+  <data name="price_table_3" xml:space="preserve">
+    <value>ЛАЗЕРНЕ ГРАВІРЮВАННЯ</value>
+  </data>
+  <data name="price_table_3_col1" xml:space="preserve">
+    <value>Тип матеріалу</value>
+  </data>
+  <data name="price_table_3_col2" xml:space="preserve">
+    <value>Цена, грн./см²</value>
+  </data>
+  <data name="price_table_col_1" xml:space="preserve">
+    <value>Товщина матеріалу, мм.</value>
+  </data>
+  <data name="price_table_col_2" xml:space="preserve">
+    <value>Вартість, грн. за м.п. (До 100 м.)</value>
+  </data>
+  <data name="price_table_col_3" xml:space="preserve">
+    <value>Вартість, грн. за м.п. (До 1000 м.)</value>
+  </data>
+  <data name="price_table_col_4" xml:space="preserve">
+    <value>Вартість, грн. за м.п. (Понад 1000 м.)</value>
+  </data>
+  <data name="reviews_button" xml:space="preserve">
+    <value>Залишити відгук</value>
+  </data>
+  <data name="reviews_header" xml:space="preserve">
+    <value>Залишити свій відгук</value>
+  </data>
+  <data name="sort_header" xml:space="preserve">
+    <value>Сортування</value>
+  </data>
+  <data name="sort_high" xml:space="preserve">
+    <value>Від дорогих до дешевих</value>
+  </data>
+  <data name="sort_low" xml:space="preserve">
+    <value>Від дешевих до дорогих</value>
+  </data>
+  <data name="sort_new" xml:space="preserve">
+    <value>Новинки</value>
+  </data>
+  <data name="sort_pop" xml:space="preserve">
+    <value>Популярні</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Або +79610000000 для неукраїнських номерів</value>
+  </data>
+  <data name="table_3_row_1" xml:space="preserve">
+    <value>Акрил/Пластик</value>
+  </data>
+  <data name="table_3_row_2" xml:space="preserve">
+    <value>Фанера/Дерево</value>
+  </data>
+  <data name="table_3_row_3" xml:space="preserve">
+    <value>Камінь</value>
+  </data>
+  <data name="table_3_row_4" xml:space="preserve">
+    <value>Шкіра</value>
+  </data>
+  <data name="table_3_row_5" xml:space="preserve">
+    <value>Тканина</value>
+  </data>
+  <data name="add_to_cart_click" xml:space="preserve">
+    <value>Купити в 1 клик</value>
+  </data>
+  <data name="menu_uv_header" xml:space="preserve">
+    <value>УФ Друк</value>
+  </data>
+  <data name="uv_price" xml:space="preserve">
+    <value>Ціни на УФ Друк</value>
+  </data>
+  <data name="uv_subtitle" xml:space="preserve">
+    <value>Вартість і вид матеріалів для УФ друку</value>
+  </data>
+</root>

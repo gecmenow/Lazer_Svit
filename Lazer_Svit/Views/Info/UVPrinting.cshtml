@@ -1,0 +1,190 @@
+﻿@model Lazer_Svit.Models.Price
+
+@{
+    ViewBag.Title = Resources.Resource.uv_price;
+}
+
+<main class="main">
+    <section class="price">
+        <div class="wrapper">
+            <div class="price-content">
+                <h2 class="price__title">@Resources.Resource.uv_price</h2>
+                <h3 class="price__subtitle">@Resources.Resource.uv_subtitle</h3>
+                <table class="price__table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            @foreach (var data in Model.uvPrintingHeaders)
+                            {
+                                if (data.cells2 != "")
+                                {
+                                    <th>@data.cells2</th>
+                                }
+                                if (data.cells3 != "")
+                                {
+                                    <th>@data.cells3</th>
+                                }
+                                if (data.cells4 != "")
+                                {
+                                    <th>@data.cells4</th>
+                                }
+                                if (data.cells5 != "")
+                                {
+                                    <th>@data.cells5</th>
+                                }
+                                if (data.cells6 != "")
+                                {
+                                    <th>@data.cells6</th>
+                                }
+                                if (data.cells7 != "")
+                                {
+                                    <th>@data.cells7</th>
+                                }
+                                if (data.cells8 != "")
+                                {
+                                    <th>@data.cells8</th>
+                                }
+                                if (data.cells9 != "")
+                                {
+                                    <th>@data.cells9</th>
+                                }
+                                if (data.cells10 != "")
+                                {
+                                    <th>@data.cells10</th>
+                                }
+                                if (data.cells11 != "")
+                                {
+                                    <th>@data.cells11</th>
+                                }
+                                if (data.cells12 != "")
+                                {
+                                    <th>@data.cells12</th>
+                                }
+                                if (data.cells13 != "")
+                                {
+                                    <th>@data.cells13</th>
+                                }
+                                if (data.cells14 != "")
+                                {
+                                    <th>@data.cells14</th>
+                                }
+                                if (data.cells15 != "")
+                                {
+                                    <th>@data.cells15</th>
+                                }
+                                if (data.cells16 != "")
+                                {
+                                    <th>data.cells16</th>
+                                }
+                                if (data.cells17 != "")
+                                {
+                                    <th>@data.cells17</th>
+                                }
+                                if (data.cells18 != "")
+                                {
+                                    <th>@data.cells18</th>
+                                }
+                                if (data.cells19 != "")
+                                {
+                                    <th>@data.cells19</th>
+                                }
+                                if (data.cells20 != "")
+                                {
+                                    <th>@data.cells20</th>
+                                }
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var data in Model.uvPrinting)
+                        {
+                            <tr>
+                                @if (data.cells1 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells1</td>
+                                }
+                                @if (data.cells2 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells2</td>
+                                }
+                                @if (data.cells3 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells3</td>
+                                }
+                                @if (data.cells4 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells4</td>
+                                }
+                                @if (data.cells5 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells5</td>
+                                }
+                                @if (data.cells6 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells6</td>
+                                }
+                                @if (data.cells7 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells7</td>
+                                }
+                                @if (data.cells8 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells8</td>
+                                }
+                                @if (data.cells9 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells9</td>
+                                }
+                                @if (data.cells10 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells10</td>
+                                }
+                                @if (data.cells11 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells11</td>
+                                }
+                                @if (data.cells12 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells12</td>
+                                }
+                                @if (data.cells13 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells13</td>
+                                }
+                                @if (data.cells14 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells14</td>
+                                }
+                                @if (data.cells15 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells15</td>
+                                }
+                                @if (data.cells16 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells16</td>
+                                } 
+                                @if (data.cells17 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells17</td>
+                                } 
+                                @if (data.cells18 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells18</td>
+                                }
+                                @if (data.cells19 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells19</td>
+                                }
+                                @if (data.cells20 != "")
+                                {
+                                <td class="UV-printing__header">@data.cells20</td>
+                                }
+                            </tr>
+                         }  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
